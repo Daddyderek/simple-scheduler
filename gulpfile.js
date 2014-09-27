@@ -82,4 +82,3 @@ gulp.task('serve', function() {
 gulp.task('build', ['sass', 'images', 'js', 'data', 'copy']);
 
 gulp.task('default', ['build', 'serve', 'watch']);
-
