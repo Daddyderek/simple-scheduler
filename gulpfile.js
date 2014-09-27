@@ -49,7 +49,9 @@ gulp.task('copy', function() {
   gulp.src([
     './bower_components/jquery/dist/jquery.js',
     './bower_components/foundation/js/foundation.js',
-    './bower_components/modernizr/modernizr.js'
+    './bower_components/modernizr/modernizr.js',
+    './bower_components/Calendario/jquery.calendario.js',
+    './bower_components/Calendario/modernizr.custom.63321.js'
   ]).pipe(uglify())
     .pipe(gulp.dest('./public/js/libs'));
 });
