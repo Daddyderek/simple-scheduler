@@ -18,9 +18,11 @@ nav.top-bar(data-topbar='', role='navigation')
               input(type="password" name="password" placeholder="Password")
               button(type="submit") Login
       li.has-dropdown
-        a(href='#') Right Button Dropdown
+        a(href='#') Admin Options
         ul.dropdown
           li
-            a(href='#') First link in dropdown
+            a(href='/admin') Schedule
           li.active
-            a(href='#') Active link in dropdown
+            a(href='/admin/edit') Edit
+          li.active
+            a(href='/admin/create') New Employee

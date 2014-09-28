@@ -1,6 +1,41 @@
 extends layout
 
 block content
-  h1 kingtak
+  h1 Scheduling People
+  form(method="POST" action="/admin" role="form")
+    .row
+      .large-12.columns
+        label
+          | Employee
+          select(name="employee")
+            option(value='husker') Husker
+    .row
+      .large-12.columns
+        label
+          | Employee
+          select(name="employee")
+            option(value='husker') Husker
+    .row
+      .large-12.columns
+        label(name="employee")
+          | Employee
+          select(name="employee")
+            option(value='husker') Husker
+    .row
+      .large-12.columns
+        label(name="employee")
+          | Employee
+          select(name="employee")
+            option(value='husker') Husker
+    .row
+      .large-6.columns
+        label Choose Shift
+        input#lunch(type='radio', name='shift', value='lunch')
+        label(for='lunch') Lunch
+        input#dinner(type='radio', name='shift', value='dinner')
+        label(for='dinner') Dinner
+    .row
+      .large-6.columns
+        button(type="submit") Submit
 append scripts
-  script(src="/js/libs/foundation-datepicker.js")
+  script(src="/js/xhr.js")

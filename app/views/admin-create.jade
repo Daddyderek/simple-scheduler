@@ -1,7 +1,19 @@
 extends layout
 
 block content
-  h1 kingtak
+  form(method="POST" action="/admin/create" role="form")
+    .row
+      .large-12.columns
+        label
+          | Employee's First Name
+          input(type='text' name="firstName" placeholder='First Name')
+    .row
+      .large-12.columns
+        label
+          | Employee's Last Name
+          input(type='text' name="lastName" placeholder='Last Name')
+    .row
+      .large-12.columns
+        button(type="submit") Submit
 append scripts
-  script(src="/js/libs/foundation-datepicker.js")
   script(src="/js/xhr.js")
