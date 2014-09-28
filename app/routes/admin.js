@@ -14,4 +14,21 @@ router.route('/admin')
     res.send(req.body);
   });
 
+router.route('/admin/create')
+  .get(function(req, res) {
+    res.render('admin-create');
+  })
+  .post(function(req, res) {
+    res.send(req.body);
+  });
+
+router.route('/admin/edit')
+  .get(function(req, res) {
+    res.render('admin-edit');
+  })
+  .post(function(req, res) {
+    res.send(req.body);
+  });
+
+
 module.exports = router;
