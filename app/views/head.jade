@@ -8,8 +8,15 @@ nav.top-bar(data-topbar='', role='navigation')
         span Menu
   section.top-bar-section
     ul.right
-      li.active
-        a(href='#') Right Button Active
+      li.has-dropdown
+        a(href='#') Admin Login
+        ul.dropdown
+          form(method="POST" action="/login" role="form")
+            li
+              input(type="text" name="username" placeholder="Username")
+            li
+              input(type="password" name="password" placeholder="Password")
+              button(type="submit") Login
       li.has-dropdown
         a(href='#') Right Button Dropdown
         ul.dropdown
