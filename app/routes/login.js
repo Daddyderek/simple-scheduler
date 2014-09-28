@@ -8,7 +8,6 @@ router.use(function(req, res, next) {
 
 router.route('/login')
   .get(function(req, res) {
-    console.log('inside route');
     res.render('login');
   })
   .post(function(req, res) {

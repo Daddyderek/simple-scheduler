@@ -49,6 +49,7 @@ gulp.task('copy', function () {
   gulp.src([
     './bower_components/jquery/dist/jquery.js',
     './bower_components/foundation/js/foundation.js',
+    './bower_components/foundation/js/foundation/foundation.topbar.js',
     './bower_components/Calendario/js/jquery.calendario.js',
     './bower_components/Calendario/js/modernizr.custom.63321.js'
   ]).pipe(uglify())
