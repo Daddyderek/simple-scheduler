@@ -4267,7 +4267,7 @@ meta.foundation-mq-topbar {
 }
 /* line 295, ../../bower_components/foundation/scss/foundation/components/_top-bar.scss */
 .top-bar-section ul li {
-  background: #333333;
+  background: transparent;
 }
 /* line 297, ../../bower_components/foundation/scss/foundation/components/_top-bar.scss */
 .top-bar-section ul li > a {
@@ -5281,6 +5281,13 @@ th.hide-for-touch {
     display: table-cell !important;
   }
 }
+@media (min-width: 992px) {
+  /* line 1, ../../app/assets/sass/partials/_base.scss */
+  .custom-calendar-wrap.custom-calendar-full {
+    margin-top: 40px;
+  }
+}
+
 @font-face {
   font-family: 'fontawesome-selected';
   src: url("../fonts/fontawesome-selected.eot?#iefix") format("embedded-opentype"), url("../fonts/fontawesome-selected.woff") format("woff"), url("../fonts/fontawesome-selected.ttf") format("truetype"), url("../fonts/fontawesome-selected.svg#fontawesome-selected") format("svg");

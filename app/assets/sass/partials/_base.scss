@@ -1,0 +1,5 @@
+.custom-calendar-wrap.custom-calendar-full {
+  @include min-breakpoint(screen-md) {
+    margin-top: 40px;
+  }
+}
