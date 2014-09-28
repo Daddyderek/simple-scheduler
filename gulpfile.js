@@ -51,7 +51,8 @@ gulp.task('copy', function () {
     './bower_components/foundation/js/foundation.js',
     './bower_components/foundation/js/foundation/foundation.topbar.js',
     './bower_components/Calendario/js/jquery.calendario.js',
-    './bower_components/Calendario/js/modernizr.custom.63321.js'
+    './bower_components/Calendario/js/modernizr.custom.63321.js',
+    './bower_components/foundation-datepicker/js/foundation-datepicker.js'
   ]).pipe(uglify())
     .pipe(gulp.dest('./public/js/libs'));
 

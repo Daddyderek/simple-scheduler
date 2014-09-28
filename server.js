@@ -8,6 +8,8 @@ var serverport = process.env.PORT || 3000;
 
 var index = require('./app/routes/index');
 var login = require('./app/routes/login');
+var admin = require('./app/routes/admin');
+
 
 var app = express();
 
@@ -27,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(index);
 app.use(login);
+app.use(admin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

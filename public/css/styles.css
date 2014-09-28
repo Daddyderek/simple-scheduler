@@ -5281,6 +5281,209 @@ th.hide-for-touch {
     display: table-cell !important;
   }
 }
+/* line 1, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  display: none;
+  min-width: 160px;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background-clip: padding-box;
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+  color: #333;
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 29, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker.dropdown-menu th, .datepicker.dropdown-menu td {
+  padding: 4px 5px;
+}
+
+/* line 32, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker {
+  display: none;
+  position: absolute;
+  padding: 4px;
+  margin-top: 1px;
+  direction: ltr;
+}
+
+/* line 39, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker-inline {
+  width: 220px;
+}
+
+/* line 42, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker-rtl {
+  direction: rtl;
+}
+
+/* line 45, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker-rtl table tr td span {
+  float: right;
+}
+
+/* line 48, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker-dropdown {
+  top: 0;
+  left: 0;
+}
+
+/* line 52, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker-dropdown:before {
+  content: '';
+  display: inline-block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: -7px;
+  left: 6px;
+}
+
+/* line 63, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker-dropdown:after {
+  content: '';
+  display: inline-block;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #fff;
+  position: absolute;
+  top: -6px;
+  left: 7px;
+}
+
+/* line 73, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker > div {
+  display: none;
+}
+
+/* line 76, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker.days div.datepicker-days {
+  display: block;
+}
+
+/* line 79, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker.months div.datepicker-months {
+  display: block;
+}
+
+/* line 82, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker.years div.datepicker-years {
+  display: block;
+}
+
+/* line 85, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker table {
+  border: 0;
+  margin: 0;
+}
+
+/* line 89, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker td, .datepicker th {
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  font-size: 12px;
+  padding: 4px 8px;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* line 99, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker td.active.day, .datepicker th.active.day {
+  background: #2ba6cb;
+}
+
+/* line 102, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker td.active.year, .datepicker th.active.year {
+  background: #2ba6cb;
+}
+
+/* line 105, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker td span.active, .datepicker th span.active {
+  background: #2ba6cb;
+}
+
+/* line 108, ../../app/assets/sass/modules/_datepicker.scss */
+.table-striped .datepicker table tr td, .table-striped .datepicker table tr th {
+  background-color: transparent;
+}
+
+/* line 111, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker table tr td span {
+  display: block;
+  width: 23%;
+  height: 54px;
+  line-height: 54px;
+  float: left;
+  margin: 1%;
+  cursor: pointer;
+}
+
+/* line 120, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker th.date-switch {
+  width: 145px;
+}
+
+/* line 123, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker thead tr:first-child th, .datepicker tfoot tr:first-child th {
+  cursor: pointer;
+}
+
+/* line 126, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker .cw {
+  font-size: 10px;
+  width: 12px;
+  padding: 0 2px 0 5px;
+  vertical-align: middle;
+}
+
+/* line 132, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker thead tr:first-child th.cw {
+  cursor: default;
+  background-color: transparent;
+}
+
+/* line 136, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker-dropdown::before, .datepicker-dropdown::after {
+  display: none;
+}
+
+/* line 139, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker-close {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  width: 15px;
+  height: 30px;
+  padding: 0;
+  display: none;
+}
+
+/* line 148, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker td.old, .datepicker td.new {
+  color: #999999;
+}
+
+/* line 151, ../../app/assets/sass/modules/_datepicker.scss */
+.datepicker td.day.disabled {
+  color: #eeeeee;
+}
+
 @media (min-width: 992px) {
   /* line 1, ../../app/assets/sass/partials/_base.scss */
   .custom-calendar-wrap.custom-calendar-full {
