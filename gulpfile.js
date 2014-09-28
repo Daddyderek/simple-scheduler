@@ -29,9 +29,9 @@ gulp.task('sass', function(){
     });
 });
 
-gulp.task('images', function () {
-  gulp.src('./app/assets/images/**/*')
-    .pipe(gulp.dest('./public/images/'));
+gulp.task('img', function () {
+  gulp.src('./app/assets/img/**/*')
+    .pipe(gulp.dest('./public/img/'));
 });
 
 gulp.task('js', function () {
@@ -51,7 +51,8 @@ gulp.task('copy', function () {
     './bower_components/foundation/js/foundation.js',
     './bower_components/foundation/js/foundation/foundation.topbar.js',
     './bower_components/Calendario/js/jquery.calendario.js',
-    './bower_components/Calendario/js/modernizr.custom.63321.js'
+    './bower_components/Calendario/js/modernizr.custom.63321.js',
+    './bower_components/jquery-ui/ui/datepicker.js'
   ]).pipe(uglify())
     .pipe(gulp.dest('./public/js/libs'));
 
@@ -62,7 +63,7 @@ gulp.task('copy', function () {
 
 gulp.task('watch', function() {
   gulp.watch('./app/assets/sass/**/*.scss', ['sass']);
-  gulp.watch('./app/assets/images/**/*', ['images']);
+  gulp.watch('./app/assets/img/**/*', ['img']);
   gulp.watch('./app/assets/js/**/*.js', ['js']);
   gulp.watch('./public/**/*').on('change', function(file) {
     refresh.changed(file.path);
@@ -80,6 +81,6 @@ gulp.task('serve', function() {
   lrserver.listen();
 });
 
-gulp.task('build', ['sass', 'images', 'js', 'data', 'copy']);
+gulp.task('build', ['sass', 'img', 'js', 'data', 'copy']);
 
 gulp.task('default', ['build', 'serve', 'watch']);

@@ -7,7 +7,7 @@ block content
       .large-12.columns
         label
           | Date
-          input(type='date' name="date" placeholder='date')
+          input(type="text" name="date" class="datepicker" required)
     .row
       .large-12.columns
         label
@@ -35,12 +35,13 @@ block content
     .row
       .large-6.columns
         label Choose Shift
-        input#lunch(type='radio', name='shift', value='lunch')
+        input#lunch(type='radio', name='shift', value='lunch' required)
         label(for='lunch') Lunch
-        input#dinner(type='radio', name='shift', value='dinner')
+        input#dinner(type='radio', name='shift', value='dinner' required)
         label(for='dinner') Dinner
     .row
       .large-6.columns
         button(type="submit") Submit
 append scripts
+  script(src="/js/libs/datepicker.js")
   script(src="/js/xhr.js")
