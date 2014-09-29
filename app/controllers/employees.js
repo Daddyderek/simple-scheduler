@@ -1,7 +1,7 @@
 var Employee = require('../models/employees');
 var moment = require('moment');
 
-module.exports.save = function(req, res, next) {
+exports.save = function(req, res, next) {
   var employee = new Employee({
     firstName: req.body.firstName,
     lastName: req.body.lastName
@@ -10,16 +10,15 @@ module.exports.save = function(req, res, next) {
     if (err) {
       res.json(err);
     } else {
-      console.log('This is employee', employee);
       res.redirect('/');
     }
   });
 };
 
-module.exports.edit = function(req, res, next) {
+exports.edit = function(req, res, next) {
   
 };
 
-module.exports.delete = function(req, res, next) {
+exports.delete = function(req, res, next) {
   
 };
