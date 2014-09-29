@@ -8,34 +8,18 @@ block content
         label
           | Date
           input(type="text" name="date" class="datepicker" required)
+    .employee-container
+      .selectEmployee
+        .row
+          .large-12.columns
+            label
+              | Employee
+              select(name="employee")
+                each name in names
+                  option(value="#{name}") #{name}
     .row
-      .large-12.columns
-        label
-          | Employee
-          select(name="employee")
-            each name in names
-              option(value="#{name}") #{name}
-    .row
-      .large-12.columns
-        label
-          | Employee
-          select(name="employee")
-            each name in names
-              option(value="#{name}") #{name}
-    .row
-      .large-12.columns
-        label
-          | Employee
-          select(name="employee")
-            each name in names
-              option(value="#{name}") #{name}
-    .row
-      .large-12.columns
-         label
-          | Employee
-          select(name="employee")
-            each name in names
-              option(value="#{name}") #{name}
+      .small-5.columns
+        button(type='button' class="add-worker") + Worker
     .row
       .large-6.columns
         label Choose Shift
