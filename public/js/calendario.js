@@ -20,13 +20,10 @@ $(function() {
       var shiftData = {};
       var element;
       _.forEach(json, function(shift, i) {
+          shiftData[shift.date] = '';
         _.forEach(shift.employees, function(emp, i) {
           element = '<div class="' + shift.shift + '">' + '<li>' + emp + '</li></div>';
-          if (_.isUndefined(shiftData[shift.date])) {
-            shiftData[shift.date] = element;
-          } else {
-            shiftData[shift.date] += element;
-          }
+          shiftData[shift.date] += element;
         });
       });
       // console.log(shiftData);

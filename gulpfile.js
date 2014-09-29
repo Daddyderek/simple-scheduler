@@ -74,7 +74,8 @@ gulp.task('watch', function() {
 gulp.task('serve', function() {
   nodemon({
     script: 'server.js',
-    ext: 'server.js'
+    ext: 'js',
+    ignore: ['assets/**/*.js', 'public']
   }).on('restart', function () {
       console.log('restarted! ' + (new Date()));
     });
