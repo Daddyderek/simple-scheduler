@@ -9,7 +9,7 @@ exports.get = function(req, res, nex) {
       }
     },
     function(err, employees) {
-      if (err) res.json(err);
+      if (err) throw err;
       res.render('admin', {
         names: formatName(employees)
       });
@@ -20,6 +20,7 @@ exports.create = function(req, res, next) {
   Employee.findOne({
     firstName: req.body.firstName.toLowerCase()
   }, function(err, user) {
+    if (err) throw err;
     if (!_.isNull(user)) {
       if (user.firstName === req.body.firstName.toLowerCase() && user.lastName === req.body.lastName.toLowerCase()) {
         res.send('already created');
@@ -30,7 +31,7 @@ exports.create = function(req, res, next) {
         lastName: req.body.lastName.toLowerCase()
       });
       employee.save(function(err) {
-        if (err) res.json(err);
+        if (err) throw err;
         res.redirect('/admin');
       });
     }

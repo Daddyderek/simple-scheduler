@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 var shiftSchema = new Schema({
   date: {
-    type: String,
+    type: Date,
     required: "Date is required"
   },
   employees: {

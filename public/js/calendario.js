@@ -14,9 +14,10 @@ $(function() {
   $('#custom-current').on('click', function() {
     cal.gotoNow(updateMonthYear);
   });
-
+  updateCalendar($currentYear);
   function updateCalendar(year) {
     $.getJSON('/shifts/' + year, function(json) {
+      console.log('ajax callin');
       console.log(json);
     });
   }

@@ -4,23 +4,24 @@ var _ = require('lodash');
 
 module.exports.getShifts = function(req, res) {
 
-  var year = parseInt(req.params.year);
+  var year = req.params.year;
 
   Shift.find({
-
+      date: {
+        $gte: new Date(2014, 0, 1),
+        $lt: new Date(2014 + 1, 0, 1)
+      }
     })
     .exec(function(err, shifts) {
-      console.log(shifts);
-      return {
-
-      };
+      if (err) throw err;
+      console.log('LOOK AT SHIFTS ', shifts);
     });
 };
 
 exports.create = function(req, res, next) {
 
   var shift = new Shift({
-    date: req.body.date,
+    date: new Date(req.body.date),
     employees: req.body.employee,
     shift: req.body.shift
   });

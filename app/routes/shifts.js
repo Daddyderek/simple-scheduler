@@ -7,7 +7,7 @@ router.use(function(req, res, next) {
   next();
 });
 
-router.route('/shifts/:id')
+router.route('/shifts/:year')
   .get(shift.getShifts)
   .put()
   .delete();

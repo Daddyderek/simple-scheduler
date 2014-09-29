@@ -6,8 +6,7 @@ exports.render = function(req, res, next) {
   Shift.find({})
     .lean()
     .exec(function(err, shifts) {
-      if (err) res.json(err);
-      console.log(shifts);
+      if (err) throw err;
       res.render('index', {
         year: new Date().getFullYear()
       });
