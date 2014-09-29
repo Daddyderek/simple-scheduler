@@ -19,8 +19,8 @@ router.route('/admin/create')
   .get(function(req, res) {
     res.render('admin-create');
   })
-  .post(function(req, res) {
-    res.send(req.body);
+  .post(employee.save, function(req, res) {
+    res.redirect('/');
   });
 
 router.route('/admin/edit')
