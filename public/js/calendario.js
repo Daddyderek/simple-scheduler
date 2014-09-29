@@ -1,16 +1,9 @@
 $(function() {
-  // $('#calendar').calendario();
-  var cal = $('#calendar').calendario({
-      onDayClick: function($el, $contentEl, dateProperties) {
 
-        for (var key in dateProperties) {
-          console.log(key + ' = ' + dateProperties[key]);
-        }
-
-      }
-    }),
-    $month = $('#custom-month').html(cal.getMonthName()),
-    $year = $('#custom-year').html(cal.getYear());
+  var cal = $('#calendar').calendario({ startIn: 0 }),
+      $month = $('#custom-month').html(cal.getMonthName()),
+      $year = $('#custom-year').html(cal.getYear()),
+      $currentYear = $('#current-year').attr('data');
 
   $('#custom-next').on('click', function() {
     cal.gotoNextMonth(updateMonthYear);
@@ -21,6 +14,12 @@ $(function() {
   $('#custom-current').on('click', function() {
     cal.gotoNow(updateMonthYear);
   });
+
+  function updateCalendar(year) {
+    $.getJSON('/shifts/' + year, function(json) {
+      console.log(json);
+    });
+  }
 
   function updateMonthYear() {
     $month.html(cal.getMonthName());

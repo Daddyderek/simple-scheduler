@@ -9,7 +9,7 @@ exports.render = function(req, res, next) {
       if (err) res.json(err);
       console.log(shifts);
       res.render('index', {
-        shifts: shifts
+        year: new Date().getFullYear()
       });
     });
 };

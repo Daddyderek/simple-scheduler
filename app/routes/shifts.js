@@ -1,13 +1,15 @@
 var express = require('express');
 var router = express.Router();
-var index = require('../controllers/index');
+var shift = require('../controllers/shifts');
 
 router.use(function(req, res, next) {
   console.log(req.method, req.url);
   next();
 });
 
-router.route('/')
-  .get(index.render);
+router.route('/shifts/:id')
+  .get(shift.getShifts)
+  .put()
+  .delete();
 
 module.exports = router;
