@@ -1,24 +1,57 @@
 var Employee = require('../models/employees');
 var moment = require('moment');
+var _ = require('lodash');
+
+exports.get = function(req, res, nex) {
+  Employee.find({}, null, {
+      sort: {
+        firstName: 1
+      }
+    },
+    function(err, employees) {
+      if (err) res.json(err);
+      res.render('admin', {
+        names: formatName(employees)
+      });
+    });
+};
 
 exports.save = function(req, res, next) {
-  var employee = new Employee({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName
-  });
-  employee.save(function(err) {
-    if (err) {
-      res.json(err);
+  Employee.findOne({
+    firstName: req.body.firstName.toLowerCase()
+  }, function(err, user) {
+    if (!_.isNull(user)) {
+      if (user.firstName === req.body.firstName.toLowerCase() && user.lastName === req.body.lastName.toLowerCase()) {
+        res.send('already created');
+      }
     } else {
-      res.redirect('/');
+      var employee = new Employee({
+        firstName: req.body.firstName.toLowerCase(),
+        lastName: req.body.lastName.toLowerCase()
+      });
+      employee.save(function(err) {
+        if (err) res.json(err);
+        res.redirect('/');
+      });
     }
   });
 };
 
-exports.edit = function(req, res, next) {
-  
+exports.delete = function(req, res, next) {
+
 };
 
-exports.delete = function(req, res, next) {
-  
-};
+function formatName(collection) {
+  var fullNames = [];
+  var firstName = _.pluck(collection, 'firstName');
+  var lastName = _.pluck(collection, 'lastName');
+  _.forEach(firstName, function(name, i) {
+    var capitalFirstName = name.toLowerCase().replace(/\b[a-z](?=[a-z]{2})/g,
+      function(letter) {
+        return letter.toUpperCase();
+      } 
+    );
+    fullNames.push(capitalFirstName + ' ' + lastName[i].charAt(0).toUpperCase() + '.');
+  });
+  return fullNames;
+}

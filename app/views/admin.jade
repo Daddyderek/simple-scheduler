@@ -13,25 +13,29 @@ block content
         label
           | Employee
           select(name="employee")
-            option(value='husker') Husker
+            each name in names
+              option(value="#{name}") #{name}
     .row
       .large-12.columns
         label
           | Employee
           select(name="employee")
-            option(value='husker') Husker
+            each name in names
+              option(value="#{name}") #{name}
     .row
       .large-12.columns
-        label(name="employee")
+        label
           | Employee
           select(name="employee")
-            option(value='husker') Husker
+            each name in names
+              option(value="#{name}") #{name}
     .row
       .large-12.columns
-        label(name="employee")
+         label
           | Employee
           select(name="employee")
-            option(value='husker') Husker
+            each name in names
+              option(value="#{name}") #{name}
     .row
       .large-6.columns
         label Choose Shift

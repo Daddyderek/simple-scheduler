@@ -8,9 +8,7 @@ router.use(function(req, res, next) {
 });
 
 router.route('/admin')
-  .get(function(req, res) {
-    res.render('admin');
-  })
+  .get(employee.get)
   .post(function(req, res) {
     res.send(req.body);
   });
