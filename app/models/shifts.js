@@ -8,7 +8,7 @@ var shiftSchema = new Schema({
     required: "Date is required"
   },
   employees: {
-    type: [String],
+    type: [],
     required: "Last name is required"
   },
   shift: {

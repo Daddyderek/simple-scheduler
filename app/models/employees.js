@@ -2,14 +2,14 @@ var moment = require('moment');
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+mongoose.connect('mongodb://localhost/scheduler');
+
 var employeeSchema = new Schema({
   firstName: {
-    type: String,
-    required: "First name is required"
+    type: String
   },
   lastName: {
-    type: String,
-    required: "Last name is required"
+    type: String
   },
   createdAt: {
     type: Date,

@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var employee = require('../controllers/employees');
 
 router.use(function(req, res, next) {
   console.log(req.method, req.url);
