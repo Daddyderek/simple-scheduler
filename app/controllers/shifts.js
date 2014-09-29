@@ -3,8 +3,6 @@ var moment = require('moment');
 var _ = require('lodash');
 
 exports.create = function(req, res, next) {
-  console.log(req.body);
-
   var shift = new Shift({
     date: req.body.date,
     employees: req.body.employee,
