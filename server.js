@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var serverport = process.env.PORT || 3000;
+var mongoose = require('mongoose');
 
 var index = require('./app/routes/index');
 var login = require('./app/routes/login');
@@ -12,6 +13,8 @@ var admin = require('./app/routes/admin');
 
 
 var app = express();
+
+mongoose.connect('mongodb://localhost/scheduler');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app/views'));

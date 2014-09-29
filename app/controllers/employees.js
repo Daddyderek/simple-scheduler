@@ -16,7 +16,7 @@ exports.get = function(req, res, nex) {
     });
 };
 
-exports.save = function(req, res, next) {
+exports.create = function(req, res, next) {
   Employee.findOne({
     firstName: req.body.firstName.toLowerCase()
   }, function(err, user) {
@@ -31,7 +31,7 @@ exports.save = function(req, res, next) {
       });
       employee.save(function(err) {
         if (err) res.json(err);
-        res.redirect('/');
+        res.redirect('/admin');
       });
     }
   });
