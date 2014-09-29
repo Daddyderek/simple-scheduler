@@ -47,6 +47,7 @@ gulp.task('data', function() {
 gulp.task('copy', function () {
   // Copy bower components into public/js/libs
   gulp.src([
+    './node_modules/lodash/dist/lodash.js',
     './bower_components/jquery/dist/jquery.js',
     './bower_components/foundation/js/foundation.js',
     './bower_components/foundation/js/foundation/foundation.topbar.js',

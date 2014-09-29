@@ -4,7 +4,7 @@ var _ = require('lodash');
 
 module.exports.getShifts = function(req, res) {
 
-  var year = req.params.year;
+  var year = parseInt(req.params.year);
 
   Shift.find({
       date: {
@@ -14,7 +14,14 @@ module.exports.getShifts = function(req, res) {
     })
     .exec(function(err, shifts) {
       if (err) throw err;
-      console.log('LOOK AT SHIFTS ', shifts);
+      res.json(shifts.map(function(shift, i) {
+        var date = moment(shift.date);
+        return {
+          date: date.format("MM-DD-YYYY"),
+          shift: shift.shift,
+          employees: shift.employees
+        };
+      }));
     });
 };
 
