@@ -4,31 +4,31 @@ block content
   h1 Scheduling People
   form(method="POST" action="/admin" role="form")
     .row
-      .large-12.columns
+      .medium-6.medium-centered.columns
         label
           | Date
           input(type="text" name="date" class="datepicker" required)
     .employee-container
       .selectEmployee
         .row
-          .large-12.columns
+          .medium-6.medium-centered.columns
             label
               | Employee
               select(name="employee")
                 each name in names
                   option(value="#{name}") #{name}
     .row
-      .small-5.columns
+      .medium-6.medium-centered.columns
         button(type='button' class="add-worker") + Worker
     .row
-      .large-6.columns
+      .medium-6.medium-centered.columns
         label Choose Shift
         input#lunch(type='radio', name='shift', value='lunch' required)
         label(for='lunch') Lunch
         input#dinner(type='radio', name='shift', value='dinner' required)
         label(for='dinner') Dinner
     .row
-      .large-6.columns
+      .medium-6.medium-centered.columns
         button(type="submit") Submit
 append scripts
   script(src="/js/libs/datepicker.js")

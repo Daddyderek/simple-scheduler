@@ -3,16 +3,16 @@ extends layout
 block content
   form(method="POST" action="/admin/create" role="form")
     .row
-      .large-12.columns
+      .medium-6.medium-centered.columns
         label
           | Employee's First Name
           input(type='text' name="firstName" placeholder='First Name')
     .row
-      .large-12.columns
+      .medium-6.medium-centered.columns
         label
           | Employee's Last Name
           input(type='text' name="lastName" placeholder='Last Name')
     .row
-      .large-12.columns
+      .medium-6.medium-centered.columns
         button(type="submit") Submit
 append scripts
