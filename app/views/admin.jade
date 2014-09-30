@@ -1,22 +1,29 @@
 extends layout
 
 block content
-  h1 Scheduling People
+  .row
+    .medium-6.medium-centered.columns
+      h1.center-title Scheduling People
   form(method="POST" action="/admin" role="form")
     .row
       .medium-6.medium-centered.columns
         label
-          | Date
+          | Select Date
           input(type="text" name="date" class="datepicker" required)
-    .employee-container
-      .selectEmployee
-        .row
-          .medium-6.medium-centered.columns
-            label
-              | Employee
-              select(name="employee")
-                each name in names
-                  option(value="#{name}") #{name}
+        hr
+      .medium-6.medium-centered.columns
+        .employee-container
+          .selectEmployee
+            .row
+              .medium-9.columns
+                label
+                  | Employee
+                  select(name="employee")
+                    each name in names
+                      option(value="#{name}") #{name}
+              .medium-3.columns
+                button(type='button' class='delete-worker') Delete
+            hr
     .row
       .medium-6.medium-centered.columns
         button(type='button' class="add-worker") + Worker

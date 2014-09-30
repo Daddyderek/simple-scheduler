@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var shift = require('../controllers/shifts');
+var Shift = require('../controllers/shifts');
 
 router.use(function(req, res, next) {
   console.log(req.method, req.url);
@@ -8,7 +8,7 @@ router.use(function(req, res, next) {
 });
 
 router.route('/shifts/:year')
-  .get(shift.getShifts)
+  .get(Shift.getShifts)
   .put()
   .delete();
 

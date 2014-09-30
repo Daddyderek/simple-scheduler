@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  .row
+    .medium-6.medium-centered.columns
+      h1.center-title Edit Schedules For
+      h1.center-title #{day} #{type}
+      h2.center-title #{date}
+
+  form(role="form")
+    .employee-container
+      each employee in shift.employees
+        .selectEmployee
+          .row
+            .medium-6.medium-centered.columns
+              label
+                | #{employee} is currently working #{day} #{type}
+                select(name="employee")
+                  each emp in emps
+                    option(value="#{emp}" selected= emp == employee) #{emp}
+    .row
+      .medium-6.medium-centered.columns
+        button(type='button' class="add-worker") + Worker
+    .row
+      .medium-6.medium-centered.columns
+        button(type="submit") Submit
+append scripts
+  script(src="/js/libs/datepicker.js")
+  script(src="/js/xhr.js")

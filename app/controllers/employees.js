@@ -1,19 +1,13 @@
 var Employee = require('../models/employees');
+var helpers = require('../lib/helpers.js');
 var moment = require('moment');
-var _ = require('lodash');
 
 exports.get = function(req, res, nex) {
-  Employee.find({}, null, {
-      sort: {
-        firstName: 1
-      }
-    },
-    function(err, employees) {
-      if (err) throw err;
-      res.render('admin', {
-        names: formatName(employees)
-      });
-    });
+  helpers.getAllEmployees(res, 'admin');
+};
+
+exports.getAll = function(req, res, next) {
+  helpers.getAllEmployees(res, 'admin-edit');
 };
 
 exports.create = function(req, res, next) {
@@ -39,20 +33,14 @@ exports.create = function(req, res, next) {
 };
 
 exports.delete = function(req, res, next) {
+  var id = req.param('id');
+  console.log('inside here === ', id);
 
-};
-
-function formatName(collection) {
-  var fullNames = [];
-  var firstName = _.pluck(collection, 'firstName');
-  var lastName = _.pluck(collection, 'lastName');
-  _.forEach(firstName, function(name, i) {
-    var capitalFirstName = name.toLowerCase().replace(/\b[a-z](?=[a-z]{2})/g,
-      function(letter) {
-        return letter.toUpperCase();
-      } 
-    );
-    fullNames.push(capitalFirstName + ' ' + lastName[i].charAt(0).toUpperCase() + '.');
+  Employee.findOneAndRemove({
+    _id : id
+  }, function(err, emp) {
+    if (err) throw err;
+    res.send('success');
+    // res.redirect('/admin');
   });
-  return fullNames;
-}
+};

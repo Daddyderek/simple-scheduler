@@ -19,12 +19,11 @@ router.route('/admin/create')
   .post(employee.create);
 
 router.route('/admin/edit')
-  .get(function(req, res) {
-    res.render('admin-edit');
-  })
-  .post(function(req, res) {
-    res.send(req.body);
-  });
+  .get(employee.getAll)
+  .post(shift.getByDay);
+
+router.route('/admin/edit/:id')
+  .delete(employee.delete);
 
 
 module.exports = router;

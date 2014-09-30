@@ -1,6 +1,31 @@
 extends layout
 
 block content
-  h1 kingtak
+  .row
+    .medium-6.medium-centered.columns
+      h1.center-title Edit Schedules
+  form(method="POST" action="/admin/edit" role="form")
+    .row
+      .medium-6.medium-centered.columns
+        label
+          | Select Date
+          input(type="text" name="date" class="datepicker" required)
+    .row
+      .medium-6.medium-centered.columns.center-title
+        button(type="submit") Submit
+  .row
+    .medium-6.medium-centered.columns
+      h1.center-title Delete Employees
+  .row
+    .medium-6.medium-centered.columns
+      each employee in employees
+        .employee-selection
+          .small-6.columns
+            h1.employee #{employee.firstName.charAt(0).toUpperCase() + employee.firstName.slice(1)} #{employee.lastName.charAt(0).toUpperCase()}.
+          .small-6.columns
+            button(type="submit" href='/admin/edit/#{employee._id}' data-id="#{employee._id}" class='delete-btn') Delete
+          hr
+
 append scripts
+  script(src="/js/libs/datepicker.js")
   script(src="/js/xhr.js")

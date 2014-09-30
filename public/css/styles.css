@@ -8109,3 +8109,8 @@ body {
   font-size: 35px;
   font-size: 2.1875rem;
 }
+
+/* line 14, ../../app/assets/sass/sections/_calender.scss */
+.center-title {
+  text-align: center;
+}
