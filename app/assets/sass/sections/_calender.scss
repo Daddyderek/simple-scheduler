@@ -1,6 +1,13 @@
 .lunch {
-  color: green;
+  color: white;
 }
 .dinner {
-  color: purple;
+  color: black;
+}
+#custom-month {
+  @include font-size(35px);
+  margin-right: 20px;
+}
+#custom-year {
+  @include font-size(35px);
 }
