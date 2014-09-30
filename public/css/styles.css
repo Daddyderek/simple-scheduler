@@ -7566,6 +7566,16 @@ body .ui-tooltip {
   }
 }
 
+/* line 1, ../../app/assets/sass/partials/_header.scss */
+#logo {
+  height: 70px;
+}
+
+/* line 4, ../../app/assets/sass/partials/_header.scss */
+.top-bar {
+  height: 70px;
+}
+
 @font-face {
   font-family: 'fontawesome-selected';
   src: url("../fonts/fontawesome-selected.eot?#iefix") format("embedded-opentype"), url("../fonts/fontawesome-selected.woff") format("woff"), url("../fonts/fontawesome-selected.ttf") format("truetype"), url("../fonts/fontawesome-selected.svg#fontawesome-selected") format("svg");
