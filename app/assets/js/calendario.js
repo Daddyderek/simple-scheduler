@@ -14,19 +14,25 @@ $(function() {
   $('#custom-current').on('click', function() {
     cal.gotoNow(updateMonthYear);
   });
+
   updateCalendar($currentYear);
+
   function updateCalendar(year) {
     $.getJSON('/shifts/' + year, function(json) {
       var shiftData = {};
       var element;
+      console.log(json);
       _.forEach(json, function(shift, i) {
-          shiftData[shift.date] = '';
         _.forEach(shift.employees, function(emp, i) {
-          element = '<div class="' + shift.shift + '">' + '<li>' + emp + '</li></div>';
-          shiftData[shift.date] += element;
+          element = '<div class="' + shift.shift + '" data="' + shift.date + '">' + emp + '</div>';
+          if (_.isUndefined(shiftData[shift.date])) {
+            shiftData[shift.date] = element;
+          } else {
+            shiftData[shift.date] += element;
+          }
         });
+        console.log(shiftData[shift.date]);
       });
-      // console.log(shiftData);
       cal.setData(shiftData);
     });
   }

@@ -7645,7 +7645,7 @@ body .ui-tooltip {
 .fc-calendar .fc-row > div {
   border-right: 1px solid #ddd;
   padding: 4px;
-  overflow: hidden;
+  overflow: scroll;
   position: relative;
 }
 
@@ -8081,4 +8081,13 @@ body {
     font-size: 10px;
     text-transform: uppercase;
   }
+}
+/* line 1, ../../app/assets/sass/sections/_calender.scss */
+.lunch {
+  color: green;
+}
+
+/* line 4, ../../app/assets/sass/sections/_calender.scss */
+.dinner {
+  color: purple;
 }
