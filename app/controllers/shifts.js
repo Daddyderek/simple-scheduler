@@ -102,11 +102,14 @@ module.exports.editShift = function(req, res) {
 };
 
 module.exports.deleteShift = function(req, res) {
-  var id = req.body.id;
+  var id = req.params.id;
+  console.log('id === ', id);
+
   Shift.findOneAndRemove({
     _id : id
   }, function(err, shift) {
     if (err) throw err;
+    console.log('Deleted shift', shift);
     res.redirect('/admin');
   });
 };

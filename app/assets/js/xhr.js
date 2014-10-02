@@ -7,14 +7,16 @@ $(function() {
   });
 
   $('body').on('click', '.delete-worker', function() {
-    // var rowAmt = $('.selectEmployee').siblings('.row').length;
-    // if (rowAmt > 0) {
-    //   $(this).closest('.row').remove();
-    // } else {
-    //   alert('Must have at least one worker');
-    // }
+    var rowAmt = $('.selectEmployee').siblings('.row').length;
+    if (location.pathname === '/admin') {
+      if (rowAmt > 0) {
+        $(this).closest('.row').remove();
+      } else {
+        alert('Must have at least one worker');
+      }
+    } else {
       $(this).closest('.row').remove();
-
+    }
   });
 
   $('.delete-btn').click(function(e) {

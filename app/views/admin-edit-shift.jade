@@ -2,10 +2,15 @@ extends layout
 
 block content
   .row
-    .medium-6.medium-centered.columns
-      h1.center-title Edit Schedules For
-      h1.center-title #{day} #{type}
-      h2.center-title #{date}
+    .medium-11.medium-centered.columns
+      h1.center-title Edit Schedules For #{day} #{type}
+      h1.center-title #{date}
+  form(role="form" method="POST" action="/shifts/"+'#{id}' enctype="application/x-www-form-urlencoded")
+    input(type="hidden" name="_method" value="delete")
+
+    .row
+      .medium-6.medium-centered.columns.center-title
+        button(type="submit") DELETE SHIFT
 
   form(role="form" method="POST" action="/shifts/"+'#{id}' enctype="application/x-www-form-urlencoded")
     input(type="hidden" name="_method" value="put")
@@ -22,12 +27,10 @@ block content
                       option(value="#{emp}" selected= emp == employee) #{emp}
               .small-3.columns
                 button(type='button' class='delete-worker') Delete
-  .row
-    .medium-6.medium-centered.columns
-      button(type='button' class="add-worker") + Worker
-  .row
-    .medium-6.medium-centered.columns
-      button(type="submit") Submit
+      .medium-12.medium-centered.columns
+        button(type='button' class="add-worker") + Worker
+        button(type="submit" class="inline-btn") Submit
+
 append scripts
   script(src="/js/libs/datepicker.js")
   script(src="/js/xhr.js")
