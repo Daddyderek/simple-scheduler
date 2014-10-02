@@ -7,7 +7,8 @@ block content
       h1.center-title #{day} #{type}
       h2.center-title #{date}
 
-  form(role="form")
+  form(role="form" method="POST" action="/shifts/"+'#{id}' enctype="application/x-www-form-urlencoded")
+    input(type="hidden" name="_method" value="PUT" hidden)
     .employee-container
       each employee in shift.employees
         .selectEmployee

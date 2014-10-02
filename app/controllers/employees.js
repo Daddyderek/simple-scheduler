@@ -1,5 +1,6 @@
 var Employee = require('../models/employees');
 var helpers = require('../lib/helpers.js');
+var _ = require('lodash');
 var moment = require('moment');
 
 exports.get = function(req, res, nex) {

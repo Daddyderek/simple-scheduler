@@ -4,9 +4,22 @@ var helpers = require('../lib/helpers');
 var moment = require('moment');
 var _ = require('lodash');
 
+exports.create = function(req, res, next) {
+
+  var shift = new Shift({
+    date: new Date(req.body.date),
+    employees: req.body.employee,
+    shift: req.body.shift
+  });
+  shift.save(function(err) {
+    if (err) res.json(err);
+    res.redirect('/');
+  });
+};
+
 module.exports.getShifts = function(req, res) {
 
-  var year = parseInt(req.params.year);
+  var year = parseInt(req.params.id);
   Shift.find({
     date: {
       $gte: new Date(year, 0, 1),
@@ -36,15 +49,18 @@ module.exports.getByDay = function(req, res) {
     });
 };
 
-exports.create = function(req, res, next) {
+module.exports.editShift = function(req, res) {
+  var id = req.params.id;
+  var employees = req.body.employee;
 
-  var shift = new Shift({
-    date: new Date(req.body.date),
-    employees: req.body.employee,
-    shift: req.body.shift
-  });
-  shift.save(function(err) {
-    if (err) res.json(err);
-    res.redirect('/');
+  Shift.findOneAndUpdate({
+    _id: id
+  }, {
+    employees: employees
+  }, function(err, shift) {
+    if (err) throw err;
+    console.log('Shift was updated ', shift);
+    res.redirect('/admin');
   });
 };
+
