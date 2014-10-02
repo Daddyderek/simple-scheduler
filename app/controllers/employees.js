@@ -4,7 +4,7 @@ var _ = require('lodash');
 var moment = require('moment');
 
 exports.get = function(req, res, nex) {
-  helpers.getAllEmployees(res, 'admin');
+  helpers.getAllEmployees(req, res, 'admin');
 };
 
 exports.create = function(req, res, next) {

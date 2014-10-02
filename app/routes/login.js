@@ -13,4 +13,10 @@ router.route('/login')
   })
   .post(login.verify);
 
+router.route('/logout')
+  .get(function(req, res) {
+    req.session.destroy();
+    res.redirect('/');
+  });
+
 module.exports = router;

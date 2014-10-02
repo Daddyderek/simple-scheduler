@@ -17,7 +17,7 @@ module.exports.formatName = function formatName(collection) {
   return fullNames;
 };
 
-module.exports.getAllEmployees = function(res, view, shift) {
+module.exports.getAllEmployees = function(req, res, view) {
   Employee.find({}, null, {
       sort: {
         firstName: 1
