@@ -97,7 +97,16 @@ module.exports.editShift = function(req, res) {
     employees: employees
   }, function(err, shift) {
     if (err) throw err;
-    console.log('Shift was updated ', shift);
+    res.redirect('/admin');
+  });
+};
+
+module.exports.deleteShift = function(req, res) {
+  var id = req.body.id;
+  Shift.findOneAndRemove({
+    _id : id
+  }, function(err, shift) {
+    if (err) throw err;
     res.redirect('/admin');
   });
 };

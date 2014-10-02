@@ -3,7 +3,7 @@ extends layout
 block content
   .row
     .medium-6.medium-centered.columns
-      h1.center-title Edit Schedules
+      h1.center-title Edit Shift
   form(method="POST" action="/admin/edit" role="form")
     .row
       .medium-6.medium-centered.columns
@@ -17,7 +17,22 @@ block content
         button(type="submit") Submit
   .row
     .medium-6.medium-centered.columns
-      h1.center-title Delete Employees
+      h1.center-title Delete Shift
+  form(role="form" method="POST" action="/shifts/"+'#{id}' enctype="application/x-www-form-urlencoded")
+    input(type="hidden" name="_method" value="delete")
+    .row
+      .medium-6.medium-centered.columns
+        label
+        | Shifts
+        select(name="id")
+          each shift in shifts
+            option(value="#{shift._id}") #{date} #{shift.shift.charAt(0).toUpperCase() + shift.shift.slice(1)}
+    .row
+      .medium-6.medium-centered.columns.center-title
+        button(type="submit") Submit
+  .row
+    .medium-6.medium-centered.columns
+      h1.center-title Delete Employee
   .row
     .medium-6.medium-centered.columns
       each employee in employees

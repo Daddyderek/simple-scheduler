@@ -10,6 +10,6 @@ router.use(function(req, res, next) {
 router.route('/shifts/:id')
   .get(Shifts.getShifts)
   .put(Shifts.editShift)
-  .delete();
+  .delete(Shifts.deleteShift);
 
 module.exports = router;

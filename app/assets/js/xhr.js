@@ -7,12 +7,14 @@ $(function() {
   });
 
   $('body').on('click', '.delete-worker', function() {
-    var rowAmt = $('.selectEmployee').siblings('.row').length;
-    if (rowAmt > 0) {
+    // var rowAmt = $('.selectEmployee').siblings('.row').length;
+    // if (rowAmt > 0) {
+    //   $(this).closest('.row').remove();
+    // } else {
+    //   alert('Must have at least one worker');
+    // }
       $(this).closest('.row').remove();
-    } else {
-      alert('Must have at least one worker');
-    }
+
   });
 
   $('.delete-btn').click(function(e) {
