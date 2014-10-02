@@ -19,6 +19,13 @@ $(function() {
     }
   });
 
+  $('#delete-shift-btn').click(function(e) {
+    var dblCheck = confirm('Are you sure you sure?');
+    if(!confirm('Are you sure you sure you want to delete?')) {
+      e.preventDefault();
+    }
+  });
+
   $('.delete-btn').click(function(e) {
     var button = $(this);
     var check = confirm('Are you sure you want to delete?');

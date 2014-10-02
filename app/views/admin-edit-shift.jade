@@ -5,12 +5,12 @@ block content
     .medium-11.medium-centered.columns
       h1.center-title Edit Schedules For #{day} #{type}
       h1.center-title #{date}
-  form(role="form" method="POST" action="/shifts/"+'#{id}' enctype="application/x-www-form-urlencoded")
+  form(role="form" id="delete-shift" method="POST" action="/shifts/"+'#{id}' enctype="application/x-www-form-urlencoded")
     input(type="hidden" name="_method" value="delete")
 
     .row
       .medium-6.medium-centered.columns.center-title
-        button(type="submit") DELETE SHIFT
+        button(id="delete-shift-btn") DELETE SHIFT
 
   form(role="form" method="POST" action="/shifts/"+'#{id}' enctype="application/x-www-form-urlencoded")
     input(type="hidden" name="_method" value="put")
