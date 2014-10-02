@@ -9,22 +9,25 @@ block content
 
   form(role="form" method="POST" action="/shifts/"+'#{id}' enctype="application/x-www-form-urlencoded")
     input(type="hidden" name="_method" value="put")
-    .employee-container
-      each employee in shift.employees
-        .selectEmployee
-          .row
-            .medium-6.medium-centered.columns
-              label
-                | #{employee} is currently working #{day} #{type}
-                select(name="employee")
-                  each emp in emps
-                    option(value="#{emp}" selected= emp == employee) #{emp}
-    .row
-      .medium-6.medium-centered.columns
-        button(type='button' class="add-worker") + Worker
-    .row
-      .medium-6.medium-centered.columns
-        button(type="submit") Submit
+    .medium-6.medium-centered.columns
+      .employee-container
+        each employee in shift.employees
+          .selectEmployee
+            .row
+              .small-9.columns
+                label
+                  | #{employee} is currently working #{day} #{type}
+                  select(name="employee")
+                    each emp in emps
+                      option(value="#{emp}" selected= emp == employee) #{emp}
+              .small-3.columns
+                button(type='button' class='delete-worker') Delete
+  .row
+    .medium-6.medium-centered.columns
+      button(type='button' class="add-worker") + Worker
+  .row
+    .medium-6.medium-centered.columns
+      button(type="submit") Submit
 append scripts
   script(src="/js/libs/datepicker.js")
   script(src="/js/xhr.js")
