@@ -7,10 +7,6 @@ exports.get = function(req, res, nex) {
   helpers.getAllEmployees(res, 'admin');
 };
 
-exports.getAll = function(req, res, next) {
-  helpers.getAllEmployees(res, 'admin-edit');
-};
-
 exports.create = function(req, res, next) {
   Employee.findOne({
     firstName: req.body.firstName.toLowerCase()

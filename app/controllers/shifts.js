@@ -17,6 +17,31 @@ exports.create = function(req, res, next) {
   });
 };
 
+module.exports.getAll = function(req, res, next) {
+  Employee.find({})
+    .sort({
+      firstName: 1
+    })
+    .lean()
+    .exec(function(err, employees) {
+      if (err) throw err;
+      Shift.find({})
+        .lean()
+        .exec(function(err, shift) {
+          if (err) throw err;
+          res.render('admin-edit', {
+            id: shift._id,
+            type: shift.shift,
+            day: moment(shift.date).format('dddd'),
+            date: moment(shift.date).format('MMMM Do YYYY'),
+            emps: helpers.formatName(employees),
+            employees: employees,
+            shift: shift
+          });
+        });
+    });
+};
+
 module.exports.getShifts = function(req, res) {
 
   var year = parseInt(req.params.id);
