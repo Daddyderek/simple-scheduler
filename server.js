@@ -22,6 +22,14 @@ mongoose.connect('mongodb://localhost/scheduler');
 app.set('views', path.join(__dirname, 'app/views'));
 app.set('view engine', 'jade');
 
+
+app.use(favicon(__dirname + '/public/img/favicon.ico'));
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+
 // put & delete middleware
 app.use(methodOverride(function(req, res){
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
@@ -31,12 +39,6 @@ app.use(methodOverride(function(req, res){
   }
 }));
 
-app.use(favicon(__dirname + '/public/img/favicon.ico'));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
