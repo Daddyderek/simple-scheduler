@@ -8,8 +8,10 @@ block content
     .row
       .medium-6.medium-centered.columns
         label
-          | Select Date
-          input(type="text" name="date" class="datepicker" required)
+        | Shifts
+        select(name="shifts")
+          each shift in shifts
+            option(value="#{id}") #{date} #{shift.shift.charAt(0).toUpperCase() + shift.shift.slice(1)}
     .row
       .medium-6.medium-centered.columns.center-title
         button(type="submit") Submit

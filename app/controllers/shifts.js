@@ -29,14 +29,12 @@ module.exports.getAll = function(req, res, next) {
         .lean()
         .exec(function(err, shift) {
           if (err) throw err;
+          var date = moment(shift.date).format("MMM Do YYYY");
           res.render('admin-edit', {
             id: shift._id,
-            type: shift.shift,
-            day: moment(shift.date).format('dddd'),
-            date: moment(shift.date).format('MMMM Do YYYY'),
-            emps: helpers.formatName(employees),
+            date: date,
             employees: employees,
-            shift: shift
+            shifts: shift
           });
         });
     });
