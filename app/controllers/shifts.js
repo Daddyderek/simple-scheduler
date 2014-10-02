@@ -63,12 +63,27 @@ module.exports.getShifts = function(req, res) {
 };
 
 module.exports.getByDay = function(req, res) {
-  var day = new Date(req.body.date);
+  var id = req.body.id;
   Shift.findOne({
-    date: day
+    _id: id
     })
     .exec(function(err, shift) {
-      helpers.getAllEmployees(res, 'admin-edit-shift', shift);
+      Employee.find({})
+        .sort({
+          firstName: 1
+        })
+        .lean()
+        .exec(function(err, employees) {
+          if (err) throw err;
+          res.render('admin-edit-shift', {
+            id: shift._id,
+            type: shift.shift,
+            day: moment(shift.date).format('dddd'),
+            date: moment(shift.date).format('MMMM Do YYYY'),
+            emps: helpers.formatName(employees),
+            shift: shift
+          });
+        });
     });
 };
 

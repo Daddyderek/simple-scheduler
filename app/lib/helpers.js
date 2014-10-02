@@ -25,10 +25,23 @@ module.exports.getAllEmployees = function(res, view, shift) {
     },
     function(err, employees) {
       if (err) throw err;
-      res.render(view, {
-        employees: employees,
-        names: formatName(employees)
-      });
+      console.log('this is shift ', shift);
+      if (_.isUndefined(shift) || _.isNull(shift)) {
+        res.render(view, {
+          employees: employees,
+          names: formatName(employees)
+        });
+      } else {
+        res.render('admin-edit-shift', {
+          id: shift._id,
+          type: shift.shift,
+          day: moment(shift.date).format('dddd'),
+          date: moment(shift.date).format('MMMM Do YYYY'),
+          emps: formatName(employees),
+          shift: shift
+        });
+      }
+
     });
 };
 

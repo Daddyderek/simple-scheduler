@@ -9,9 +9,9 @@ block content
       .medium-6.medium-centered.columns
         label
         | Shifts
-        select(name="shifts")
+        select(name="id")
           each shift in shifts
-            option(value="#{id}") #{date} #{shift.shift.charAt(0).toUpperCase() + shift.shift.slice(1)}
+            option(value="#{shift._id}") #{date} #{shift.shift.charAt(0).toUpperCase() + shift.shift.slice(1)}
     .row
       .medium-6.medium-centered.columns.center-title
         button(type="submit") Submit
