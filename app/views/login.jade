@@ -1,4 +1,14 @@
 extends layout
 
 block content
-  
+  section.login
+    form(method="POST" action="/admin" role="form")
+      .row
+        .small-8.medium-4.small-centered.columns
+          label Username :
+            input(type="text" placeholder="Username" required)
+          label Password :
+            input(type="password" placeholder="Password" required)
+      .row
+        .small-8.medium-4.small-centered.columns.btn-container
+          button(type='submit' id="login") Login

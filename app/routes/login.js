@@ -1,4 +1,5 @@
 var express = require('express');
+var login = require('../controllers/login');
 var router = express.Router();
 
 router.use(function(req, res, next) {
@@ -10,8 +11,6 @@ router.route('/login')
   .get(function(req, res) {
     res.render('login');
   })
-  .post(function(req, res) {
-    res.send(req.body);
-  });
+  .post(login.verify);
 
 module.exports = router;

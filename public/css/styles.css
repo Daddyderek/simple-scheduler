@@ -8149,3 +8149,34 @@ body {
 .center-title {
   text-align: center;
 }
+
+/* line 1, ../../app/assets/sass/sections/_login.scss */
+section.login {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  -webkit-transform: translate(-50%, -80%);
+      -ms-transform: translate(-50%, -80%);
+          transform: translate(-50%, -80%);
+}
+@media (max-width: 64.063em) {
+  /* line 1, ../../app/assets/sass/sections/_login.scss */
+  section.login {
+    -webkit-transform: translate(-50%, 60%);
+        -ms-transform: translate(-50%, 60%);
+            transform: translate(-50%, 60%);
+  }
+}
+@media (min-width: 881px) and (max-width: 1025px) {
+  /* line 1, ../../app/assets/sass/sections/_login.scss */
+  section.login {
+    -webkit-transform: translate(-50%, -80%);
+        -ms-transform: translate(-50%, -80%);
+            transform: translate(-50%, -80%);
+  }
+}
+/* line 13, ../../app/assets/sass/sections/_login.scss */
+section.login .btn-container {
+  text-align: center;
+}
