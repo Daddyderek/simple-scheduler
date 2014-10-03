@@ -1,5 +1,11 @@
+body {
+  font-family: $baseFontFamily;
+  width: 100%;
+  height: 100%;
+}
+
 .custom-calendar-wrap.custom-calendar-full {
   @include min-breakpoint(screen-md) {
-    margin-top: 40px;
+    margin-top: 50px;
   }
 }

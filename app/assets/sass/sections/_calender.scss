@@ -2,7 +2,7 @@
   color: white;
 }
 .dinner {
-  color: black;
+  color: white;
 }
 #custom-month {
   @include font-size(35px);
@@ -13,4 +13,144 @@
 }
 .center-title {
   text-align: center;
+}
+
+.fc-calendar {
+  border-radius: 0;
+  top: 20px;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    background: $green;
+    width: 100%;
+    height: 5px;
+    pointer-events: none;
+  }
+  .fc-head {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    background: #111;
+    border-bottom: 5px solid $green;
+    > div {
+      text-align: left;
+      padding-left: 10px;
+      font-weight: 500;
+      margin-top: -5px;
+    }
+  }
+  .fc-body {
+    padding: 0;
+    height: calc(100% - 40px);
+  }
+  .fc-row {
+    background: #222;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: none;
+    > div {
+      overflow: hidden;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 15%;
+        background: linear-gradient(rgba(255, 255, 255, 0), #222);
+      }
+      > div {
+        overflow: scroll;
+        height: 100%;
+        padding-bottom: 35px;
+        margin-top: 30px;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+      }
+    }
+  }
+  .fc-row > div.fc-today {
+    // background: $green;
+    > div > div {
+      color: #fff;
+    }
+  }
+  .dinner {
+    &:after {
+      content: "D";
+      width: 18px;
+      height: 18px;
+      margin-left: 7px;
+      padding-left: 5px;
+      background: $purple;
+      display: inline-block;
+      border-radius: 50%;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+  }
+  .lunch {
+    &:after {
+      content: "L";
+      width: 18px;
+      height: 18px;
+      margin-left: 7px;
+      padding-left: 5px;
+      background: $green;
+      display: inline-block;
+      border-radius: 50%;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+  }
+}
+
+.custom-header {
+  h3 {
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+    color: #fff;
+    font-weight: 300;
+    .custom-month {
+      font-weight: 600;
+      margin-right: 15px;
+    }
+  }
+  nav {
+    top: 10px;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: -80px;
+    @media screen and (max-width:880px), screen and (max-height:450px) {
+      margin-left: 0;
+    }
+    span {
+      background: none;
+      box-shadow: none;
+      &:before {
+        transition: 0.25s color;
+      }
+      &:hover {
+        background: none;
+        box-shadow: none;
+        &:before {
+          color: #999;
+        }
+      }
+      &:last-child {
+        margin-left: 415px;
+        @media screen and (max-width:880px), screen and (max-height:450px) {
+          margin-left: 0;
+        }
+      }
+    }
+  }
 }

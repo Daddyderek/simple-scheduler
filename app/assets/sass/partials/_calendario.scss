@@ -99,7 +99,7 @@
 body {
   // background: #cebe29;
   // background: linear-gradient(135deg, #cebe29 0%, #9b1f50 33%, #2989d8 71%, #89b4ff 91%);
-  background-color: #666;
+  background-color: #111;
   background-size: 100% 100%;
 }
 .custom-calendar-full {
@@ -282,7 +282,7 @@ body {
   background: transparent;
   box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.1);
 }
-.fc-calendar .fc-row > div.fc-today:after {
+.fc-calendar .fc-row > div.fc-today:before {
   content: '';
   display: block;
   position: absolute;
@@ -291,6 +291,7 @@ body {
   width: 100%;
   height: 100%;
   opacity: 0.2;
+  pointer-events: none;
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, 0.15)), to(rgba(0, 0, 0, 0.25))), -webkit-gradient(linear, left top, right bottom, color-stop(0, rgba(255, 255, 255, 0)), color-stop(0.5, rgba(255, 255, 255, .15)), color-stop(0.501, rgba(255, 255, 255, 0)), color-stop(1, rgba(255, 255, 255, 0)));
   background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.25)), -moz-linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0));
   background: -o-linear-gradient(top, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.25)), -o-llinear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0));
