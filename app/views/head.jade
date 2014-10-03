@@ -8,23 +8,25 @@ nav.top-bar(data-topbar='', role='navigation')
         span Menu
   section.top-bar-section
     ul.right
-      li.has-dropdown
-        a(href='#') Admin Login
-        ul.dropdown
-          form(method="POST" action="/login" role="form")
-            li
-              input(type="text" name="username" placeholder="Username")
-            li
-              input(type="password" name="password" placeholder="Password")
-              button(type="submit") Login
-      li.has-dropdown
-        a(href='#') Admin Options
-        ul.dropdown
-          li.active
-            a(href='/admin') Schedule
-          li.active
-            a(href='/admin/edit') Edit
-          li.active
-            a(href='/admin/create') New Employee
-          li.active
-            a(href='/logout') Logout
+      if (!auth)
+        li.has-dropdown
+          a(href='#') Admin Login
+          ul.dropdown
+            form(method="POST" action="/login" role="form")
+              li
+                input(type="text" name="username" placeholder="Username")
+              li
+                input(type="password" name="password" placeholder="Password")
+                button(type="submit") Login
+      else
+        li.has-dropdown
+          a(href='#') Admin Options
+          ul.dropdown
+            li.active
+              a(href='/admin') Schedule
+            li.active
+              a(href='/admin/edit') Edit
+            li.active
+              a(href='/admin/create') New Employee
+            li.active
+              a(href='/logout') Logout

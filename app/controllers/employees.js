@@ -23,7 +23,7 @@ exports.create = function(req, res, next) {
       });
       employee.save(function(err) {
         if (err) throw err;
-        res.redirect('/admin');
+        res.redirect('/');
       });
     }
   });
