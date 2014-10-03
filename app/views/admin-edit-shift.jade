@@ -2,29 +2,35 @@ extends layout
 
 block content
   .row
-    .medium-6.medium-centered.columns
-      h1.center-title Edit Schedules For
-      h1.center-title #{day} #{type}
-      h2.center-title #{date}
+    .medium-11.medium-centered.columns
+      h1.center-title Edit Schedules For #{day} #{type}
+      h1.center-title #{date}
+  form(role="form" id="delete-shift" method="POST" action="/shifts/"+'#{id}' enctype="application/x-www-form-urlencoded")
+    input(type="hidden" name="_method" value="delete")
+
+    .row
+      .medium-6.medium-centered.columns.center-title
+        button(id="delete-shift-btn") DELETE SHIFT
 
   form(role="form" method="POST" action="/shifts/"+'#{id}' enctype="application/x-www-form-urlencoded")
-    input(type="hidden" name="_method" value="PUT" hidden)
-    .employee-container
-      each employee in shift.employees
-        .selectEmployee
-          .row
-            .medium-6.medium-centered.columns
-              label
-                | #{employee} is currently working #{day} #{type}
-                select(name="employee")
-                  each emp in emps
-                    option(value="#{emp}" selected= emp == employee) #{emp}
-    .row
-      .medium-6.medium-centered.columns
+    input(type="hidden" name="_method" value="put")
+    .medium-6.medium-centered.columns
+      .employee-container
+        each employee in shift.employees
+          .selectEmployee
+            .row
+              .small-9.columns
+                label
+                  | #{employee} is currently working #{day} #{type}
+                  select(name="employee")
+                    each emp in emps
+                      option(value="#{emp}" selected= emp == employee) #{emp}
+              .small-3.columns
+                button(type='button' class='delete-worker') Delete
+      .medium-12.medium-centered.columns
         button(type='button' class="add-worker") + Worker
-    .row
-      .medium-6.medium-centered.columns
-        button(type="submit") Submit
+        button(type="submit" class="inline-btn") Submit
+
 append scripts
   script(src="/js/libs/datepicker.js")
   script(src="/js/xhr.js")

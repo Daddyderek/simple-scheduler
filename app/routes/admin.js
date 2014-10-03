@@ -19,7 +19,7 @@ router.route('/admin/create')
   .post(employee.create);
 
 router.route('/admin/edit')
-  .get(employee.getAll)
+  .get(shift.getAll)
   .post(shift.getByDay);
 
 router.route('/admin/edit/:id')

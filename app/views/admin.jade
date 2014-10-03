@@ -15,15 +15,14 @@ block content
         .employee-container
           .selectEmployee
             .row
-              .medium-9.columns
+              .small-9.columns
                 label
                   | Employee
                   select(name="employee")
                     each name in names
                       option(value="#{name}") #{name}
-              .medium-3.columns
+              .small-3.columns
                 button(type='button' class='delete-worker') Delete
-            hr
     .row
       .medium-6.medium-centered.columns
         button(type='button' class="add-worker") + Worker

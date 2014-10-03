@@ -17,6 +17,29 @@ exports.create = function(req, res, next) {
   });
 };
 
+module.exports.getAll = function(req, res, next) {
+  Employee.find({})
+    .sort({
+      firstName: 1
+    })
+    .lean()
+    .exec(function(err, employees) {
+      if (err) throw err;
+      Shift.find({})
+        .lean()
+        .exec(function(err, shift) {
+          if (err) throw err;
+          var date = moment(shift.date).format("MMM Do YYYY");
+          res.render('admin-edit', {
+            id: shift._id,
+            date: date,
+            employees: employees,
+            shifts: shift
+          });
+        });
+    });
+};
+
 module.exports.getShifts = function(req, res) {
 
   var year = parseInt(req.params.id);
@@ -40,12 +63,27 @@ module.exports.getShifts = function(req, res) {
 };
 
 module.exports.getByDay = function(req, res) {
-  var day = new Date(req.body.date);
+  var id = req.body.id;
   Shift.findOne({
-    date: day
+    _id: id
     })
     .exec(function(err, shift) {
-      helpers.getAllEmployees(res, 'admin-edit-shift', shift);
+      Employee.find({})
+        .sort({
+          firstName: 1
+        })
+        .lean()
+        .exec(function(err, employees) {
+          if (err) throw err;
+          res.render('admin-edit-shift', {
+            id: shift._id,
+            type: shift.shift,
+            day: moment(shift.date).format('dddd'),
+            date: moment(shift.date).format('MMMM Do YYYY'),
+            emps: helpers.formatName(employees),
+            shift: shift
+          });
+        });
     });
 };
 
@@ -59,7 +97,19 @@ module.exports.editShift = function(req, res) {
     employees: employees
   }, function(err, shift) {
     if (err) throw err;
-    console.log('Shift was updated ', shift);
+    res.redirect('/admin');
+  });
+};
+
+module.exports.deleteShift = function(req, res) {
+  var id = req.params.id;
+  console.log('id === ', id);
+
+  Shift.findOneAndRemove({
+    _id : id
+  }, function(err, shift) {
+    if (err) throw err;
+    console.log('Deleted shift', shift);
     res.redirect('/admin');
   });
 };

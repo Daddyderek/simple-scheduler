@@ -4,11 +4,7 @@ var _ = require('lodash');
 var moment = require('moment');
 
 exports.get = function(req, res, nex) {
-  helpers.getAllEmployees(res, 'admin');
-};
-
-exports.getAll = function(req, res, next) {
-  helpers.getAllEmployees(res, 'admin-edit');
+  helpers.getAllEmployees(req, res, 'admin');
 };
 
 exports.create = function(req, res, next) {
@@ -27,7 +23,7 @@ exports.create = function(req, res, next) {
       });
       employee.save(function(err) {
         if (err) throw err;
-        res.redirect('/admin');
+        res.redirect('/');
       });
     }
   });

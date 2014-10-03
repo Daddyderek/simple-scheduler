@@ -5282,6 +5282,31 @@ th.hide-for-touch {
     display: table-cell !important;
   }
 }
+/* line 1, ../../app/assets/sass/modules/_buttons.scss */
+button, .button {
+  padding: 10px 20px;
+}
+
+/* line 4, ../../app/assets/sass/modules/_buttons.scss */
+.delete-worker {
+  margin-top: 20px;
+}
+
+/* line 7, ../../app/assets/sass/modules/_buttons.scss */
+label {
+  color: white;
+}
+
+/* line 10, ../../app/assets/sass/modules/_buttons.scss */
+.edit.delete-btn {
+  margin: 17px 0 0 0;
+}
+
+/* line 13, ../../app/assets/sass/modules/_buttons.scss */
+.inline-btn {
+  margin-left: 50px;
+}
+
 /*! jQuery UI - v1.11.1 - 2014-08-13
 * http://jqueryui.com
 * Includes: core.css, accordion.css, autocomplete.css, button.css, datepicker.css, dialog.css, draggable.css, menu.css, progressbar.css, resizable.css, selectable.css, selectmenu.css, slider.css, sortable.css, spinner.css, tabs.css, tooltip.css, theme.css
@@ -8294,4 +8319,35 @@ body {
   .custom-header nav span:last-child {
     margin-left: 0;
   }
+}
+
+/* line 1, ../../app/assets/sass/sections/_login.scss */
+section.login {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  -webkit-transform: translate(-50%, -80%);
+      -ms-transform: translate(-50%, -80%);
+          transform: translate(-50%, -80%);
+}
+@media (max-width: 64.063em) {
+  /* line 1, ../../app/assets/sass/sections/_login.scss */
+  section.login {
+    -webkit-transform: translate(-50%, 60%);
+        -ms-transform: translate(-50%, 60%);
+            transform: translate(-50%, 60%);
+  }
+}
+@media (min-width: 881px) and (max-width: 1025px) {
+  /* line 1, ../../app/assets/sass/sections/_login.scss */
+  section.login {
+    -webkit-transform: translate(-50%, -80%);
+        -ms-transform: translate(-50%, -80%);
+            transform: translate(-50%, -80%);
+  }
+}
+/* line 13, ../../app/assets/sass/sections/_login.scss */
+section.login .btn-container {
+  text-align: center;
 }
