@@ -1,5 +1,5 @@
 var express = require('express');
-var login = require('../controllers/login');
+var login = require('../controllers/logins');
 var router = express.Router();
 
 router.use(function(req, res, next) {
