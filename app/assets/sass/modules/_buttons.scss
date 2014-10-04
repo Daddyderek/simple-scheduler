@@ -1,5 +1,11 @@
 button, .button {
   padding: 10px 20px;
+  color: white;
+  background-color: $purple;
+  &:hover {
+    background-color: $green;
+    color: black;
+  }
 }
 .delete-worker {
   margin-top: 20px;

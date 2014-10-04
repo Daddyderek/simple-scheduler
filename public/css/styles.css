@@ -5285,24 +5285,31 @@ th.hide-for-touch {
 /* line 1, ../../app/assets/sass/modules/_buttons.scss */
 button, .button {
   padding: 10px 20px;
+  color: white;
+  background-color: #9e86c2;
+}
+/* line 5, ../../app/assets/sass/modules/_buttons.scss */
+button:hover, .button:hover {
+  background-color: #9ed600;
+  color: black;
 }
 
-/* line 4, ../../app/assets/sass/modules/_buttons.scss */
+/* line 10, ../../app/assets/sass/modules/_buttons.scss */
 .delete-worker {
   margin-top: 20px;
 }
 
-/* line 7, ../../app/assets/sass/modules/_buttons.scss */
+/* line 13, ../../app/assets/sass/modules/_buttons.scss */
 label {
   color: white;
 }
 
-/* line 10, ../../app/assets/sass/modules/_buttons.scss */
+/* line 16, ../../app/assets/sass/modules/_buttons.scss */
 .edit.delete-btn {
   margin: 17px 0 0 0;
 }
 
-/* line 13, ../../app/assets/sass/modules/_buttons.scss */
+/* line 19, ../../app/assets/sass/modules/_buttons.scss */
 .inline-btn {
   margin-left: 50px;
 }
@@ -7599,6 +7606,11 @@ body {
   }
 }
 
+/* line 13, ../../app/assets/sass/partials/_base.scss */
+h1, h2, h3, h4, h5, h6 {
+  color: #9ed600;
+}
+
 /* line 1, ../../app/assets/sass/partials/_header.scss */
 #logo {
   height: 70px;
@@ -7816,10 +7828,9 @@ body {
   font-weight: 300;
   line-height: 30px;
   text-align: right;
-  padding-right: 155px;
 }
 
-/* line 159, ../../app/assets/sass/partials/_calendario.scss */
+/* line 158, ../../app/assets/sass/partials/_calendario.scss */
 .custom-header nav {
   position: absolute;
   right: 20px;
@@ -7832,7 +7843,7 @@ body {
   user-select: none;
 }
 
-/* line 170, ../../app/assets/sass/partials/_calendario.scss */
+/* line 169, ../../app/assets/sass/partials/_calendario.scss */
 .custom-header nav span {
   float: left;
   width: 30px;
@@ -7847,17 +7858,17 @@ body {
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.2);
 }
 
-/* line 183, ../../app/assets/sass/partials/_calendario.scss */
+/* line 182, ../../app/assets/sass/partials/_calendario.scss */
 .custom-header nav span:first-child {
   border-radius: 3px 0 0 3px;
 }
 
-/* line 186, ../../app/assets/sass/partials/_calendario.scss */
+/* line 185, ../../app/assets/sass/partials/_calendario.scss */
 .custom-header nav span:hover {
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* line 189, ../../app/assets/sass/partials/_calendario.scss */
+/* line 188, ../../app/assets/sass/partials/_calendario.scss */
 .custom-header span:before {
   font-family: 'fontawesome-selected';
   color: #fff;
@@ -7867,28 +7878,28 @@ body {
   text-indent: 4px;
 }
 
-/* line 197, ../../app/assets/sass/partials/_calendario.scss */
+/* line 196, ../../app/assets/sass/partials/_calendario.scss */
 .custom-header nav span.custom-prev:before {
   content: '\25c2';
 }
 
-/* line 200, ../../app/assets/sass/partials/_calendario.scss */
+/* line 199, ../../app/assets/sass/partials/_calendario.scss */
 .custom-header nav span.custom-next:before {
   content: '\25b8';
 }
 
-/* line 203, ../../app/assets/sass/partials/_calendario.scss */
+/* line 202, ../../app/assets/sass/partials/_calendario.scss */
 .custom-header nav span:last-child {
   margin-left: 20px;
   border-radius: 3px;
 }
 
-/* line 207, ../../app/assets/sass/partials/_calendario.scss */
+/* line 206, ../../app/assets/sass/partials/_calendario.scss */
 .custom-header nav span.custom-current:before {
   content: '\27a6';
 }
 
-/* line 210, ../../app/assets/sass/partials/_calendario.scss */
+/* line 209, ../../app/assets/sass/partials/_calendario.scss */
 .fc-calendar {
   background: rgba(255, 255, 255, 0.1);
   width: auto;
@@ -7901,7 +7912,7 @@ body {
   position: absolute;
 }
 
-/* line 221, ../../app/assets/sass/partials/_calendario.scss */
+/* line 220, ../../app/assets/sass/partials/_calendario.scss */
 .fc-calendar .fc-head {
   background: rgba(255, 255, 255, 0.2);
   color: rgba(255, 255, 255, 0.9);
@@ -7912,7 +7923,7 @@ body {
   padding: 0 20px;
 }
 
-/* line 230, ../../app/assets/sass/partials/_calendario.scss */
+/* line 229, ../../app/assets/sass/partials/_calendario.scss */
 .fc-calendar .fc-head > div {
   font-weight: 300;
   text-transform: uppercase;
@@ -7921,7 +7932,7 @@ body {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
 }
 
-/* line 237, ../../app/assets/sass/partials/_calendario.scss */
+/* line 236, ../../app/assets/sass/partials/_calendario.scss */
 .fc-calendar .fc-row > div > span.fc-date {
   color: rgba(255, 255, 255, 0.9);
   text-shadow: none;
@@ -7935,44 +7946,44 @@ body {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 
-/* line 249, ../../app/assets/sass/partials/_calendario.scss */
+/* line 248, ../../app/assets/sass/partials/_calendario.scss */
 .fc-calendar .fc-body {
   border: none;
   padding: 20px;
 }
 
-/* line 253, ../../app/assets/sass/partials/_calendario.scss */
+/* line 252, ../../app/assets/sass/partials/_calendario.scss */
 .fc-calendar .fc-row {
   box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.2);
   border: none;
 }
 
-/* line 257, ../../app/assets/sass/partials/_calendario.scss */
+/* line 256, ../../app/assets/sass/partials/_calendario.scss */
 .fc-calendar .fc-row:last-child {
   box-shadow: none;
 }
 
-/* line 260, ../../app/assets/sass/partials/_calendario.scss */
+/* line 259, ../../app/assets/sass/partials/_calendario.scss */
 .fc-calendar .fc-row:first-child > div:first-child {
   border-radius: 10px 0 0 0;
 }
 
-/* line 263, ../../app/assets/sass/partials/_calendario.scss */
+/* line 262, ../../app/assets/sass/partials/_calendario.scss */
 .fc-calendar .fc-row:first-child > div:last-child {
   border-radius: 0 10px 0 0;
 }
 
-/* line 266, ../../app/assets/sass/partials/_calendario.scss */
+/* line 265, ../../app/assets/sass/partials/_calendario.scss */
 .fc-calendar .fc-row:last-child > div:first-child {
   border-radius: 0 0 0 10px;
 }
 
-/* line 269, ../../app/assets/sass/partials/_calendario.scss */
+/* line 268, ../../app/assets/sass/partials/_calendario.scss */
 .fc-calendar .fc-row:last-child > div:last-child {
   border-radius: 0 0 10px 0;
 }
 
-/* line 272, ../../app/assets/sass/partials/_calendario.scss */
+/* line 271, ../../app/assets/sass/partials/_calendario.scss */
 .fc-calendar .fc-row > div {
   box-shadow: -1px 0 0 rgba(255, 255, 255, 0.2);
   border: none;
@@ -7980,18 +7991,18 @@ body {
   cursor: pointer;
 }
 
-/* line 278, ../../app/assets/sass/partials/_calendario.scss */
+/* line 277, ../../app/assets/sass/partials/_calendario.scss */
 .fc-calendar .fc-row > div:first-child {
   box-shadow: none;
 }
 
-/* line 281, ../../app/assets/sass/partials/_calendario.scss */
+/* line 280, ../../app/assets/sass/partials/_calendario.scss */
 .fc-calendar .fc-row > div.fc-today {
   background: transparent;
   box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.1);
 }
 
-/* line 285, ../../app/assets/sass/partials/_calendario.scss */
+/* line 284, ../../app/assets/sass/partials/_calendario.scss */
 .fc-calendar .fc-row > div.fc-today:before {
   content: '';
   display: block;
@@ -8007,12 +8018,12 @@ body {
   background: linear-gradient(top, rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.25)), linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0));
 }
 
-/* line 301, ../../app/assets/sass/partials/_calendario.scss */
+/* line 300, ../../app/assets/sass/partials/_calendario.scss */
 .fc-calendar .fc-row > div > div {
   margin-top: 35px;
 }
 
-/* line 304, ../../app/assets/sass/partials/_calendario.scss */
+/* line 303, ../../app/assets/sass/partials/_calendario.scss */
 .fc-calendar .fc-row > div > div a, .fc-calendar .fc-row > div > div span {
   color: rgba(255, 255, 255, 0.7);
   font-size: 12px;
@@ -8028,18 +8039,18 @@ body {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* line 318, ../../app/assets/sass/partials/_calendario.scss */
+/* line 317, ../../app/assets/sass/partials/_calendario.scss */
 .no-touch .fc-calendar .fc-row > div > div a:hover {
   background: rgba(255, 255, 255, 0.3);
 }
 
 @media screen and (max-width: 880px), screen and (max-height: 450px) {
-  /* line 322, ../../app/assets/sass/partials/_calendario.scss */
+  /* line 321, ../../app/assets/sass/partials/_calendario.scss */
   html, body, .container {
     height: auto;
   }
 
-  /* line 325, ../../app/assets/sass/partials/_calendario.scss */
+  /* line 324, ../../app/assets/sass/partials/_calendario.scss */
   .custom-header, .custom-header nav, .custom-calendar-full, .fc-calendar-container, .fc-calendar, .fc-calendar .fc-head, .fc-calendar .fc-row > div > span.fc-date {
     position: relative;
     top: auto;
@@ -8050,12 +8061,12 @@ body {
     width: auto;
   }
 
-  /* line 334, ../../app/assets/sass/partials/_calendario.scss */
+  /* line 333, ../../app/assets/sass/partials/_calendario.scss */
   .fc-calendar {
     margin: 0 20px 20px;
   }
 
-  /* line 337, ../../app/assets/sass/partials/_calendario.scss */
+  /* line 336, ../../app/assets/sass/partials/_calendario.scss */
   .custom-header h2, .custom-header h3 {
     float: none;
     width: auto;
@@ -8063,14 +8074,14 @@ body {
     padding-right: 100px;
   }
 
-  /* line 343, ../../app/assets/sass/partials/_calendario.scss */
+  /* line 342, ../../app/assets/sass/partials/_calendario.scss */
   .fc-calendar .fc-row, .ie9 .fc-calendar .fc-row > div, .fc-calendar .fc-row > div {
     height: auto;
     width: 100%;
     border: none;
   }
 
-  /* line 348, ../../app/assets/sass/partials/_calendario.scss */
+  /* line 347, ../../app/assets/sass/partials/_calendario.scss */
   .fc-calendar .fc-row > div {
     float: none;
     min-height: 50px;
@@ -8078,7 +8089,7 @@ body {
     border-radius: 0px !important;
   }
 
-  /* line 354, ../../app/assets/sass/partials/_calendario.scss */
+  /* line 353, ../../app/assets/sass/partials/_calendario.scss */
   .fc-calendar .fc-row > div:empty {
     min-height: 0;
     height: 0;
@@ -8086,17 +8097,17 @@ body {
     padding: 0;
   }
 
-  /* line 360, ../../app/assets/sass/partials/_calendario.scss */
+  /* line 359, ../../app/assets/sass/partials/_calendario.scss */
   .fc-calendar .fc-row {
     box-shadow: none;
   }
 
-  /* line 363, ../../app/assets/sass/partials/_calendario.scss */
+  /* line 362, ../../app/assets/sass/partials/_calendario.scss */
   .fc-calendar .fc-head {
     display: none;
   }
 
-  /* line 366, ../../app/assets/sass/partials/_calendario.scss */
+  /* line 365, ../../app/assets/sass/partials/_calendario.scss */
   .fc-calendar .fc-row > div > div {
     margin-top: 0px;
     padding-left: 10px;
@@ -8104,24 +8115,24 @@ body {
     display: inline-block;
   }
 
-  /* line 372, ../../app/assets/sass/partials/_calendario.scss */
+  /* line 371, ../../app/assets/sass/partials/_calendario.scss */
   .fc-calendar .fc-row > div.fc-today {
     background: rgba(255, 255, 255, 0.2);
   }
 
-  /* line 375, ../../app/assets/sass/partials/_calendario.scss */
+  /* line 374, ../../app/assets/sass/partials/_calendario.scss */
   .fc-calendar .fc-row > div.fc-today:after {
     display: none;
   }
 
-  /* line 378, ../../app/assets/sass/partials/_calendario.scss */
+  /* line 377, ../../app/assets/sass/partials/_calendario.scss */
   .fc-calendar .fc-row > div > span.fc-date {
     width: 30px;
     display: inline-block;
     text-align: right;
   }
 
-  /* line 383, ../../app/assets/sass/partials/_calendario.scss */
+  /* line 382, ../../app/assets/sass/partials/_calendario.scss */
   .fc-calendar .fc-row > div > span.fc-weekday {
     display: inline-block;
     width: 40px;
@@ -8280,9 +8291,9 @@ body {
   top: 10px;
   right: auto;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translateX(-35%);
+      -ms-transform: translateX(-35%);
+          transform: translateX(-35%);
   margin-left: -80px;
 }
 @media screen and (max-width: 880px), screen and (max-height: 450px) {
