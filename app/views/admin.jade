@@ -1,10 +1,11 @@
 extends layout
 
 block content
-  .row
-    .medium-6.medium-centered.columns
-      h1.center-title Scheduling People
-  form(method="POST" action="/admin" role="form")
+  section.admin-dashboard
+    .row
+      .medium-6.medium-centered.columns
+        h1.center-title Scheduling People
+    form(method="POST" action="/admin" role="form")
     .row
       .medium-6.medium-centered.columns
         label
@@ -21,7 +22,7 @@ block content
                   select(name="employee")
                     each name in names
                       option(value="#{name}") #{name}
-              .small-3.columns
+              .small-3.columns.delete-btn
                 button(type='button' class='delete-worker') Delete
     .row
       .medium-6.medium-centered.columns

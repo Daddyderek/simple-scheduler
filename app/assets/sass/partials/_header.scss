@@ -1,6 +1,28 @@
-#logo {
-  height: 70px;
-}
-.top-bar {
-  height: 70px;
+nav.top-bar {
+  #logo {
+    height: 70px;
+  }
+  .top-bar-section ul.right {
+    @include min-breakpoint(screen-md) {
+      margin-right: 25px;
+    }
+  }
+  li.parent-link.show-for-small {
+    text-align: center;
+    a {
+      @include font-size(25px);
+    }
+  }
+  li.active {
+    a {
+      @include font-size(15px);
+      text-decoration: none;
+    }
+    @include min-breakpoint(tablet) {
+      text-align: center;
+      a {
+        @include font-size(20px);
+      }
+    }
+  }
 }

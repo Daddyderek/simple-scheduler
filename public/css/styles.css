@@ -7611,14 +7611,41 @@ h1, h2, h3, h4, h5, h6 {
   color: #9ed600;
 }
 
-/* line 1, ../../app/assets/sass/partials/_header.scss */
-#logo {
+/* line 2, ../../app/assets/sass/partials/_header.scss */
+nav.top-bar #logo {
   height: 70px;
 }
-
-/* line 4, ../../app/assets/sass/partials/_header.scss */
-.top-bar {
-  height: 70px;
+@media (min-width: 992px) {
+  /* line 5, ../../app/assets/sass/partials/_header.scss */
+  nav.top-bar .top-bar-section ul.right {
+    margin-right: 25px;
+  }
+}
+/* line 10, ../../app/assets/sass/partials/_header.scss */
+nav.top-bar li.parent-link.show-for-small {
+  text-align: center;
+}
+/* line 12, ../../app/assets/sass/partials/_header.scss */
+nav.top-bar li.parent-link.show-for-small a {
+  font-size: 25px;
+  font-size: 1.5625rem;
+}
+/* line 17, ../../app/assets/sass/partials/_header.scss */
+nav.top-bar li.active a {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+@media (max-width: 880px) {
+  /* line 16, ../../app/assets/sass/partials/_header.scss */
+  nav.top-bar li.active {
+    text-align: center;
+  }
+  /* line 23, ../../app/assets/sass/partials/_header.scss */
+  nav.top-bar li.active a {
+    font-size: 20px;
+    font-size: 1.25rem;
+  }
 }
 
 @font-face {
@@ -8336,6 +8363,17 @@ body {
   /* line 148, ../../app/assets/sass/sections/_calender.scss */
   .custom-header nav span:last-child {
     margin-left: 0;
+  }
+}
+
+/* line 1, ../../app/assets/sass/sections/_admin-dashboard.scss */
+section.admin-dashboard {
+  margin-top: 50px;
+}
+@media (max-width: 480px) {
+  /* line 3, ../../app/assets/sass/sections/_admin-dashboard.scss */
+  section.admin-dashboard .delete-btn {
+    padding-left: 0;
   }
 }
 
