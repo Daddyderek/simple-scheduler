@@ -17,3 +17,17 @@ label {
 .center-text {
   text-align: center;
 }
+.ajax-success {
+  color: green;
+  text-align: center;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  background-color: #DFF0D8
+}
+.ajax-fail {
+  color: #A94442;
+  text-align: center;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  background-color: #F2DEDE;
+}

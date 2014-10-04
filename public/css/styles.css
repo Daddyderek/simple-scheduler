@@ -7630,6 +7630,24 @@ label {
   text-align: center;
 }
 
+/* line 20, ../../app/assets/sass/partials/_base.scss */
+.ajax-success {
+  color: green;
+  text-align: center;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  background-color: #dff0d8;
+}
+
+/* line 27, ../../app/assets/sass/partials/_base.scss */
+.ajax-fail {
+  color: #A94442;
+  text-align: center;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  background-color: #F2DEDE;
+}
+
 /* line 2, ../../app/assets/sass/partials/_header.scss */
 nav.top-bar #logo {
   height: 70px;

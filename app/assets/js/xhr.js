@@ -1,4 +1,5 @@
 $(function() {
+
   $(".datepicker").datepicker();
 
   $('.add-worker').click(function(e) {
@@ -37,5 +38,27 @@ $(function() {
         }
       });
     }
+  });
+
+  $('.form').submit(function(e) {
+
+    e.preventDefault();
+
+    var path = $('.ajax-form').attr('data');
+    console.log(path);
+
+    $.post(path, $('.form').serialize())
+      .done(function(data) {
+        $('.ajax-success').append('Successfully Created new shift').css('padding', '20px');
+        setTimeout(function() {
+          $('.ajax-success').fadeOut("slow");
+        }, 3000);
+      })
+      .fail(function(data) {
+        console.error('XHR fail!');
+      })
+      .always(function() {
+        console.info('Finished with ');
+      });
   });
 });
