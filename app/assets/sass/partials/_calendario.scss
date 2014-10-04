@@ -388,3 +388,8 @@ body {
     text-transform: uppercase;
   }
 }
+.fc-calendar.fc-five-rows {
+  @include max-breakpoint(tablet) {
+    border-top: 4px solid $green;
+  }
+}

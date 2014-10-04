@@ -8142,6 +8142,13 @@ body {
     text-transform: uppercase;
   }
 }
+@media (max-width: 880px) {
+  /* line 391, ../../app/assets/sass/partials/_calendario.scss */
+  .fc-calendar.fc-five-rows {
+    border-top: 4px solid #9ed600;
+  }
+}
+
 /* line 1, ../../app/assets/sass/sections/_calender.scss */
 .lunch {
   color: white;
