@@ -1,18 +1,21 @@
 extends layout
 
 block content
-  form(method="POST" action="/admin/create" role="form")
+  section.admin-create
     .row
       .medium-6.medium-centered.columns
-        label
-          | Employee's First Name
-          input(type='text' name="firstName" placeholder='First Name')
-    .row
-      .medium-6.medium-centered.columns
-        label
-          | Employee's Last Name
-          input(type='text' name="lastName" placeholder='Last Name')
-    .row
-      .medium-6.medium-centered.columns
-        button(type="submit") Submit
-append scripts
+        h1.center-title Create New Employee
+    form(method="POST" action="/admin/create" role="form")
+      .row
+        .medium-6.medium-centered.columns
+          label
+            | Employee's First Name
+            input(type='text' name="firstName" placeholder='First Name')
+      .row
+        .medium-6.medium-centered.columns
+          label
+            | Employee's Last Name
+            input(type='text' name="lastName" placeholder='Last Name')
+      .row.last-row
+        .medium-6.medium-centered.columns.center-text
+          button(type="submit") Submit

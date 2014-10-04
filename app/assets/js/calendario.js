@@ -11,7 +11,7 @@ $(function() {
   $('#custom-prev').on('click', function() {
     cal.gotoPreviousMonth(updateMonthYear);
   });
-  $('#custom-current').on('click', function() {
+  $('#custom-month').on('click', function() {
     cal.gotoNow(updateMonthYear);
   });
 

@@ -1,15 +1,15 @@
 $topbar-media-query: "only screen and (min-width: 992px)";
 
 // navigation
-$topbar-height: 50px;
+$topbar-height: 70px;
 $topbar-bg: transparent;
 $topbar-dropdown-bg: transparent;
-$topbar-dropdown-link-bg: transparent;
-$topbar-link-color-hover: white;
-$topbar-link-bg-color-hover: transparent;
+$topbar-dropdown-link-bg: #101010;
+$topbar-link-color-hover: #9ED600;
+$topbar-link-bg-color-hover: #101010;
 $topbar-link-bg-active: transparent;
-$topbar-link-bg-hover: transparent;
-$topbar-link-color-active: whitesubl ;
+$topbar-link-bg-hover: black;
+$topbar-link-color-active: white;
 $topbar-margin-bottom: rem-calc(15);
 
 // Foundation by ZURB
