@@ -2,7 +2,6 @@ var Shift = require('../models/shifts');
 var Employee = require('../models/employees');
 var helpers = require('../lib/helpers');
 var moment = require('moment');
-var _ = require('lodash');
 
 exports.create = function(req, res, next) {
 
@@ -26,15 +25,15 @@ module.exports.getAll = function(req, res, next) {
     .exec(function(err, employees) {
       if (err) throw err;
       Shift.find({})
+        .sort({
+          date: 1
+        })
         .lean()
         .exec(function(err, shift) {
           if (err) throw err;
-          var date = moment(shift.date).format("MMM Do YYYY");
           res.render('admin-edit', {
-            id: shift._id,
-            date: date,
             employees: employees,
-            shifts: shift
+            shifts: helpers.reformatDate(shift)
           });
         });
     });
@@ -66,7 +65,7 @@ module.exports.getByDay = function(req, res) {
   var id = req.body.id;
   Shift.findOne({
     _id: id
-    })
+  })
     .exec(function(err, shift) {
       Employee.find({})
         .sort({
@@ -106,11 +105,10 @@ module.exports.deleteShift = function(req, res) {
   console.log('id === ', id);
 
   Shift.findOneAndRemove({
-    _id : id
+    _id: id
   }, function(err, shift) {
     if (err) throw err;
     console.log('Deleted shift', shift);
     res.redirect('/admin');
   });
 };
-

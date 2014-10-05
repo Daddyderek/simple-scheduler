@@ -2,6 +2,7 @@ var Employee = require('../models/employees');
 var moment = require('moment');
 var _ = require('lodash');
 
+
 module.exports.formatName = function formatName(collection) {
   var fullNames = [];
   var firstName = _.pluck(collection, 'firstName');
@@ -15,6 +16,22 @@ module.exports.formatName = function formatName(collection) {
     fullNames.push(capitalFirstName + ' ' + lastName[i].charAt(0).toUpperCase() + '.');
   });
   return fullNames;
+};
+
+module.exports.reformatDate = function(collection) {
+  var reformatted = [];
+
+  _.forEach(collection, function(val, i) {
+    return reformatted.push({
+      _id: val._id,
+      date: moment(val.date).format("MMM Do YYYY"),
+      shift: val.shift.charAt(0).toUpperCase() + val.shift.slice(1),
+      createdAt: val.createdAt,
+      employees: val.employees
+    });
+  });
+
+  return reformatted;
 };
 
 module.exports.getAllEmployees = function(req, res, view) {

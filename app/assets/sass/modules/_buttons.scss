@@ -7,6 +7,12 @@ button, .button {
     color: black;
   }
 }
+.purple-btn {
+  background-color: $purple !important;
+  &:hover {
+    background-color: $green !important;
+  }
+}
 .delete-worker {
   margin-top: 20px;
 }

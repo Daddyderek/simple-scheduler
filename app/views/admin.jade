@@ -1,41 +1,45 @@
 extends layout
 
 block content
-  .row
-    .medium-6.medium-centered.columns
-      h1.center-title Scheduling People
-  form(method="POST" action="/admin" role="form")
+  section.admin-dashboard
     .row
       .medium-6.medium-centered.columns
-        label
-          | Select Date
-          input(type="text" name="date" class="datepicker" required)
-        hr
-      .medium-6.medium-centered.columns
-        .employee-container
-          .selectEmployee
-            .row
-              .small-9.columns
-                label
-                  | Employee
-                  select(name="employee")
-                    each name in names
-                      option(value="#{name}") #{name}
-              .small-3.columns
-                button(type='button' class='delete-worker') Delete
-    .row
-      .medium-6.medium-centered.columns
-        button(type='button' class="add-worker") + Worker
-    .row
-      .medium-6.medium-centered.columns
-        label Choose Shift
-        input#lunch(type='radio', name='shift', value='lunch' required)
-        label(for='lunch') Lunch
-        input#dinner(type='radio', name='shift', value='dinner' required)
-        label(for='dinner') Dinner
-    .row
-      .medium-6.medium-centered.columns
-        button(type="submit") Submit
+        h1.center-title Scheduling People
+        .ajax-success
+        .ajax-fail
+      .ajax-form(data="/admin" hidden)
+      form(data-abide="ajax" class="form" role="form")
+        .row
+          .medium-6.medium-centered.columns
+            label
+              | Select Date
+              input(type="text" name="date" class="datepicker" required)
+            hr
+          .medium-6.medium-centered.columns
+            .employee-container
+              .selectEmployee
+                .row
+                  .small-9.columns
+                    label
+                      | Employee
+                      select(name="employee")
+                        each name in names
+                          option(value="#{name}") #{name}
+                  .small-3.columns.delete-btn
+                    button(type='button' class='delete-worker') Delete
+        .row
+          .medium-6.medium-centered.columns
+            button(type='button' class="add-worker") + Worker
+        .row
+          .medium-6.medium-centered.columns
+            label Choose Shift
+            input#lunch(type='radio', name='shift', value='lunch' required)
+            label(for='lunch') Lunch
+            input#dinner(type='radio', name='shift', value='dinner' required)
+            label(for='dinner') Dinner
+        .row
+          .medium-6.medium-centered.columns.center-text
+            button(type="submit" value="submit") Submit
 append scripts
   script(src="/js/libs/datepicker.js")
   script(src="/js/xhr.js")

@@ -14,10 +14,10 @@ nav.top-bar(data-topbar='', role='navigation')
           ul.dropdown
             form(method="POST" action="/login" role="form")
               li
-                input(type="text" name="username" placeholder="Username")
+                input(type="text" name="username" placeholder="Username" required)
               li
-                input(type="password" name="password" placeholder="Password")
-                button(type="submit") Login
+                input(type="password" name="password" placeholder="Password" required)
+                button(type="submit" class="purple-btn") Login
       else
         li.has-dropdown
           a(href='#') Admin Options
