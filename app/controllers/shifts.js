@@ -2,7 +2,6 @@ var Shift = require('../models/shifts');
 var Employee = require('../models/employees');
 var helpers = require('../lib/helpers');
 var moment = require('moment');
-var d = require('eyes');
 
 exports.create = function(req, res, next) {
 
@@ -32,7 +31,6 @@ module.exports.getAll = function(req, res, next) {
         .lean()
         .exec(function(err, shift) {
           if (err) throw err;
-          d.inspect(helpers.reformatDate(shift));
           res.render('admin-edit', {
             employees: employees,
             shifts: helpers.reformatDate(shift)
@@ -67,7 +65,7 @@ module.exports.getByDay = function(req, res) {
   var id = req.body.id;
   Shift.findOne({
     _id: id
-    })
+  })
     .exec(function(err, shift) {
       Employee.find({})
         .sort({
@@ -107,11 +105,10 @@ module.exports.deleteShift = function(req, res) {
   console.log('id === ', id);
 
   Shift.findOneAndRemove({
-    _id : id
+    _id: id
   }, function(err, shift) {
     if (err) throw err;
     console.log('Deleted shift', shift);
     res.redirect('/admin');
   });
 };
-

@@ -25,7 +25,7 @@ module.exports.reformatDate = function(collection) {
     return reformatted.push({
       _id: val._id,
       date: moment(val.date).format("MMM Do YYYY"),
-      shift: val.shift,
+      shift: val.shift.charAt(0).toUpperCase() + val.shift.slice(1),
       createdAt: val.createdAt,
       employees: val.employees
     });
