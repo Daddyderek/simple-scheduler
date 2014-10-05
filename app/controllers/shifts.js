@@ -2,7 +2,7 @@ var Shift = require('../models/shifts');
 var Employee = require('../models/employees');
 var helpers = require('../lib/helpers');
 var moment = require('moment');
-var _ = require('lodash');
+var d = require('eyes');
 
 exports.create = function(req, res, next) {
 
@@ -26,15 +26,16 @@ module.exports.getAll = function(req, res, next) {
     .exec(function(err, employees) {
       if (err) throw err;
       Shift.find({})
+        .sort({
+          date: 1
+        })
         .lean()
         .exec(function(err, shift) {
           if (err) throw err;
-          var date = moment(shift.date).format("MMM Do YYYY");
+          d.inspect(helpers.reformatDate(shift));
           res.render('admin-edit', {
-            id: shift._id,
-            date: date,
             employees: employees,
-            shifts: shift
+            shifts: helpers.reformatDate(shift)
           });
         });
     });

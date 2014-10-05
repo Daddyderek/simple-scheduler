@@ -11,7 +11,7 @@ block content
         | Shifts
         select(name="id")
           each shift in shifts
-            option(value="#{shift._id}") #{date} #{shift.shift.charAt(0).toUpperCase() + shift.shift.slice(1)}
+            option(value="#{shift._id}") #{shift.date} #{shift.shift}
     .row
       .medium-6.medium-centered.columns.center-title
         button(type="submit") Submit
@@ -31,4 +31,5 @@ block content
 
 append scripts
   script(src="/js/libs/datepicker.js")
+  script(src="/js/libs/moment.js")
   script(src="/js/xhr.js")
