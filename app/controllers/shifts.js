@@ -109,6 +109,6 @@ module.exports.deleteShift = function(req, res) {
   }, function(err, shift) {
     if (err) throw err;
     console.log('Deleted shift', shift);
-    res.redirect('/admin');
+    res.redirect('/');
   });
 };

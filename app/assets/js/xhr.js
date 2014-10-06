@@ -21,22 +21,8 @@ $(function() {
   });
 
   $('#delete-shift-btn').click(function(e) {
-    var dblCheck = confirm('Are you sure you sure?');
-    if(!confirm('Are you sure you sure you want to delete?')) {
+    if(!confirm('Are you sure you want to delete?')) {
       e.preventDefault();
-    }
-  });
-
-  $('.delete-btn').click(function(e) {
-    var button = $(this);
-    var check = confirm('Are you sure you want to delete?');
-    if (check) {
-      $.ajax(button.attr('href'), {
-        method: 'DELETE',
-        success: function(result) {
-          button.closest('.employee-selection').remove();
-        }
-      });
     }
   });
 
@@ -55,7 +41,10 @@ $(function() {
         }, 3000);
       })
       .fail(function(data) {
-        console.error('XHR fail!');
+        $('.ajax-fail').append('Failed to save new shift').css('padding', '20px');
+        setTimeout(function() {
+          $('.ajax-fail').fadeOut("slow");
+        }, 3000);
       })
       .always(function() {
         console.info('Finished with ');
