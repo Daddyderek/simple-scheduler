@@ -10,6 +10,9 @@ h1, h2, h3, h4, h5, h6 {
   @include min-breakpoint(screen-md) {
     margin-top: 50px;
   }
+  @include between-breakpoints(880px, 992px) {
+    margin-top: 80px;
+  }
 }
 label {
   color: white;

@@ -1,6 +1,8 @@
 $topbar-media-query: "only screen and (min-width: 992px)";
 
 // navigation
+$topbar-breakpoint: 880px;
+$topbar-media-query: "only screen and (min-width: #{$topbar-breakpoint})";
 $topbar-height: 70px;
 $topbar-bg: transparent;
 $topbar-dropdown-bg: transparent;
