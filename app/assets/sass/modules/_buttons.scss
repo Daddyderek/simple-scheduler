@@ -6,6 +6,9 @@ button, .button {
     background-color: $green;
     color: black;
   }
+  &:focus {
+    background-color: $green;
+  }
 }
 .purple-btn {
   background-color: $purple !important;

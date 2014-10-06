@@ -5293,32 +5293,36 @@ button:hover, .button:hover {
   background-color: #9ed600;
   color: black;
 }
+/* line 9, ../../app/assets/sass/modules/_buttons.scss */
+button:focus, .button:focus {
+  background-color: #9ed600;
+}
 
-/* line 10, ../../app/assets/sass/modules/_buttons.scss */
+/* line 13, ../../app/assets/sass/modules/_buttons.scss */
 .purple-btn {
   background-color: #9e86c2 !important;
 }
-/* line 12, ../../app/assets/sass/modules/_buttons.scss */
+/* line 15, ../../app/assets/sass/modules/_buttons.scss */
 .purple-btn:hover {
   background-color: #9ed600 !important;
 }
 
-/* line 16, ../../app/assets/sass/modules/_buttons.scss */
+/* line 19, ../../app/assets/sass/modules/_buttons.scss */
 .delete-worker {
   margin-top: 20px;
 }
 
-/* line 19, ../../app/assets/sass/modules/_buttons.scss */
+/* line 22, ../../app/assets/sass/modules/_buttons.scss */
 label {
   color: white;
 }
 
-/* line 22, ../../app/assets/sass/modules/_buttons.scss */
+/* line 25, ../../app/assets/sass/modules/_buttons.scss */
 .edit.delete-btn {
   margin: 17px 0 0 0;
 }
 
-/* line 25, ../../app/assets/sass/modules/_buttons.scss */
+/* line 28, ../../app/assets/sass/modules/_buttons.scss */
 .inline-btn {
   margin-left: 50px;
 }
