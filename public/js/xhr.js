@@ -26,6 +26,19 @@ $(function() {
     }
   });
 
+  $('.edit.delete-btn').click(function(e) {
+    var button = $(this);
+    var check = confirm('Are you sure you want to delete?');
+    if (check) {
+      $.ajax(button.attr('href'), {
+        method: 'DELETE',
+        success: function(result) {
+          button.closest('.employee-selection').remove();
+        }
+      });
+    }
+  });
+
   $('.form').submit(function(e) {
 
     e.preventDefault();
