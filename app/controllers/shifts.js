@@ -12,7 +12,7 @@ exports.create = function(req, res, next) {
   });
   shift.save(function(err) {
     if (err) res.json(err);
-    res.redirect('/');
+    res.send('Successfully Saved!');
   });
 };
 

@@ -20,12 +20,6 @@ $(function() {
     }
   });
 
-  $('#delete-shift-btn').click(function(e) {
-    if(!confirm('Are you sure you want to delete?')) {
-      e.preventDefault();
-    }
-  });
-
   $('.edit.delete-btn').click(function(e) {
     var button = $(this);
     var check = confirm('Are you sure you want to delete?');
@@ -39,12 +33,17 @@ $(function() {
     }
   });
 
+  $('#delete-shift-btn').click(function(e) {
+    if(!confirm('Are you sure you want to delete?')) {
+      e.preventDefault();
+    }
+  });
+
   $('.form').submit(function(e) {
 
     e.preventDefault();
 
     var path = $('.ajax-form').attr('data');
-    console.log(path);
 
     $.post(path, $('.form').serialize())
       .done(function(data) {
@@ -54,6 +53,7 @@ $(function() {
         }, 3000);
       })
       .fail(function(data) {
+        console.log('This is data ', data);
         $('.ajax-fail').append('Failed to save new shift').css('padding', '20px');
         setTimeout(function() {
           $('.ajax-fail').fadeOut("slow");
