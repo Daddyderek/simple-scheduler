@@ -8,9 +8,9 @@ router.use(function(req, res, next) {
 });
 
 router.route('/login')
-  // .get(function(req, res) {
-  //   res.render('login');
-  // })
+  .get(function(req, res) {
+    res.render('login');
+  })
   .post(login.verify);
 
 router.route('/logout')

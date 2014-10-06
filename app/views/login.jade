@@ -2,13 +2,16 @@ extends layout
 
 block content
   section.login
-    form(method="POST" action="/login" role="form")
-      .row
-        .small-8.medium-4.small-centered.columns
-          label Username :
-            input(type="text" name="username" placeholder="Username" required)
-          label Password :
-            input(type="password" name="password" placeholder="Password" required)
-      .row
-        .small-8.medium-4.small-centered.columns.btn-container
-          button(type='submit') Login
+    .row
+      .small-8.medium-3.small-centered.columns
+        h2 Invalid Credentials
+      form(method="POST" action="/login" role="form")
+        .row
+          .small-8.medium-4.small-centered.columns
+            label Username :
+              input(type="text" name="username" placeholder="Username" required)
+            label Password :
+              input(type="password" name="password" placeholder="Password" required)
+        .row
+          .small-8.medium-4.small-centered.columns.btn-container
+            button(type='submit') Login
