@@ -45,14 +45,14 @@ $(function() {
 
     $.post('/admin', $('.form').serialize())
       .done(function(data) {
-        if (data) {
-          $('.ajax-success').prepend('Successfully Created new shift').css('padding', '20px');
+        if (data.valid) {
+          $('.ajax-success').prepend(data.msg).css('padding', '20px');
           $('form.form').hide();
           setTimeout(function() {
             $('.ajax-success').fadeOut("slow");
           }, 3000);
         } else {
-          $('.ajax-fail').prepend('Failed to save new shift').css('padding', '20px');
+          $('.ajax-fail').prepend(data.msg).css('padding', '20px');
           setTimeout(function() {
             $('.ajax-fail').fadeOut("slow");
           }, 3000);

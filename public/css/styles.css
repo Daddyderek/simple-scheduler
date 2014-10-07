@@ -8352,9 +8352,10 @@ body {
   font-weight: 600;
   font-size: 12px;
   line-height: 1.7;
+  color: black;
 }
 
-/* line 115, ../../app/assets/sass/sections/_calender.scss */
+/* line 116, ../../app/assets/sass/sections/_calender.scss */
 .custom-header h3 {
   width: 100%;
   text-align: center;
@@ -8362,12 +8363,12 @@ body {
   color: #fff;
   font-weight: 300;
 }
-/* line 121, ../../app/assets/sass/sections/_calender.scss */
+/* line 122, ../../app/assets/sass/sections/_calender.scss */
 .custom-header h3 .custom-month {
   font-weight: 600;
   margin-right: 15px;
 }
-/* line 126, ../../app/assets/sass/sections/_calender.scss */
+/* line 127, ../../app/assets/sass/sections/_calender.scss */
 .custom-header nav {
   top: 10px;
   right: auto;
@@ -8378,36 +8379,36 @@ body {
   margin-left: -80px;
 }
 @media screen and (max-width: 880px), screen and (max-height: 450px) {
-  /* line 126, ../../app/assets/sass/sections/_calender.scss */
+  /* line 127, ../../app/assets/sass/sections/_calender.scss */
   .custom-header nav {
     margin-left: 0;
   }
 }
-/* line 135, ../../app/assets/sass/sections/_calender.scss */
+/* line 136, ../../app/assets/sass/sections/_calender.scss */
 .custom-header nav span {
   background: none;
   box-shadow: none;
 }
-/* line 138, ../../app/assets/sass/sections/_calender.scss */
+/* line 139, ../../app/assets/sass/sections/_calender.scss */
 .custom-header nav span:before {
   -webkit-transition: 0.25s color;
           transition: 0.25s color;
 }
-/* line 141, ../../app/assets/sass/sections/_calender.scss */
+/* line 142, ../../app/assets/sass/sections/_calender.scss */
 .custom-header nav span:hover {
   background: none;
   box-shadow: none;
 }
-/* line 144, ../../app/assets/sass/sections/_calender.scss */
+/* line 145, ../../app/assets/sass/sections/_calender.scss */
 .custom-header nav span:hover:before {
   color: #999;
 }
-/* line 148, ../../app/assets/sass/sections/_calender.scss */
+/* line 149, ../../app/assets/sass/sections/_calender.scss */
 .custom-header nav span:last-child {
   margin-left: 415px;
 }
 @media screen and (max-width: 880px), screen and (max-height: 450px) {
-  /* line 148, ../../app/assets/sass/sections/_calender.scss */
+  /* line 149, ../../app/assets/sass/sections/_calender.scss */
   .custom-header nav span:last-child {
     margin-left: 0;
   }

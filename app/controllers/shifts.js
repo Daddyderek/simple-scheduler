@@ -1,27 +1,43 @@
-var Shift = require('../models/shifts');
+var Shift    = require('../models/shifts');
 var Employee = require('../models/employees');
-var helpers = require('../lib/helpers');
-var _ = require('lodash');
-var moment = require('moment');
+var helpers  = require('../lib/helpers');
+var moment   = require('moment');
+var _        = require('lodash');
 var d = require('eyes');
 
 exports.create = function(req, res, next) {
   var data = req.body;
-  d.inspect(data);
+  var emps;
 
-  if (data.date && data.shift) {
+  if (_.isArray(data.employee)) {
+    emps = _.uniq(data.employee);
+  } else {
+    emps = data.employee;
+  }
 
+  if (data.date === '') {
+    res.send({
+      valid: false,
+      msg: 'Did not select a date!'
+    });
+  } else if (_.isUndefined(data.shift)) {
+    res.send({
+      valid: false,
+      msg: 'Did not select a shift!'
+    });
+  } else {
     var shift = new Shift({
       date: new Date(data.date),
-      employees: _.uniq(data.employee),
+      employees: emps,
       shift: data.shift
     });
     shift.save(function(err) {
       if (err) res.json(err);
-      res.send(true);
+      res.send({
+        valid: true,
+        msg: 'Successfully created new shift!'
+      });
     });
-  } else {
-    res.send(false);
   }
 };
 
