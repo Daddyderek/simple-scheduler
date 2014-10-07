@@ -1,16 +1,20 @@
 var Shift = require('../models/shifts');
 var Employee = require('../models/employees');
 var helpers = require('../lib/helpers');
+var _ = require('lodash');
 var moment = require('moment');
 var d = require('eyes');
 
 exports.create = function(req, res, next) {
   var data = req.body;
-  if (data.date && data.employee && data.shift) {
+  d.inspect(data);
+
+  if (data.date && data.shift) {
+
     var shift = new Shift({
-      date: new Date(req.body.date),
-      employees: req.body.employee,
-      shift: req.body.shift
+      date: new Date(data.date),
+      employees: _.uniq(data.employee),
+      shift: data.shift
     });
     shift.save(function(err) {
       if (err) res.json(err);
