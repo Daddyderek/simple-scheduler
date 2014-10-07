@@ -17,21 +17,21 @@ router.use(function(req, res, next) {
   }
 });
 
-router.route('/admin')
+router.route('/')
   .get(employee.get)
   .post(shift.create);
 
-router.route('/admin/create')
+router.route('/create')
   .get(function(req, res) {
     res.render('admin-create');
   })
   .post(employee.create);
 
-router.route('/admin/edit')
+router.route('/edit')
   .get(shift.getAll)
   .post(shift.getByDay);
 
-router.route('/admin/edit/:id')
+router.route('/edit/:id')
   .delete(employee.delete);
 
 

@@ -7,7 +7,7 @@ router.use(function(req, res, next) {
   next();
 });
 
-router.route('/shifts/:id')
+router.route('/:id')
   .get(Shifts.getShifts)
   .put(Shifts.editShift)
   .delete(Shifts.deleteShift);

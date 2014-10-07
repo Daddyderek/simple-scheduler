@@ -7,18 +7,14 @@ module.exports.verify = function(req, res) {
   User.findOne({
     username: username,
     password: password
-  }, function(err, users) {
+  }, function(err, _user) {
     if (err) throw err;
 
-    if (_.isNull(users)) {
+    if (_.isNull(_user)) {
       res.redirect('/login');
     } else {
-      if(users.username === username && users.password === password) {
-        req.session.admin = users.username;
-        res.redirect('admin');
-      } else {
-        res.redirect('/login');
-      }
+      req.session.admin = _user.username;
+      res.redirect('admin');
     }
   });
 };

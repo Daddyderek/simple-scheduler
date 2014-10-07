@@ -2,18 +2,23 @@ var Shift = require('../models/shifts');
 var Employee = require('../models/employees');
 var helpers = require('../lib/helpers');
 var moment = require('moment');
+var d = require('eyes');
 
 exports.create = function(req, res, next) {
-
-  var shift = new Shift({
-    date: new Date(req.body.date),
-    employees: req.body.employee,
-    shift: req.body.shift
-  });
-  shift.save(function(err) {
-    if (err) res.json(err);
-    res.send('Successfully Saved!');
-  });
+  var data = req.body;
+  if (data.date && data.employee && data.shift) {
+    var shift = new Shift({
+      date: new Date(req.body.date),
+      employees: req.body.employee,
+      shift: req.body.shift
+    });
+    shift.save(function(err) {
+      if (err) res.json(err);
+      res.status(200).send('Successfully Saved!');
+    });
+  } else {
+    res.send('Error');
+  }
 };
 
 module.exports.getAll = function(req, res, next) {

@@ -9,9 +9,8 @@ var methodOverride  = require('method-override');
 var mongoose        = require('mongoose');
 var serverport      = process.env.PORT || 3000;
 
-var index = require('./app/routes/index');
-var login = require('./app/routes/login');
 var admin = require('./app/routes/admin');
+var index = require('./app/routes/index');
 var shift = require('./app/routes/shifts');
 
 var app = express();
@@ -47,10 +46,9 @@ app.use(methodOverride(function(req, res){
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(index);
-app.use(login);
-app.use(admin);
-app.use(shift);
+app.use('/', index);
+app.use('/admin', admin);
+app.use('/shifts', shift);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
