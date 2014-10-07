@@ -15,7 +15,6 @@ var admin = require('./app/routes/admin');
 var shift = require('./app/routes/shifts');
 
 var app = express();
-var auth = false;
 
 mongoose.connect('mongodb://localhost/scheduler');
 
@@ -35,13 +34,6 @@ app.use(session({
   saveUninitialized: true,
   resave: true
 }));
-
-app.use(function(req, res, next) {
-  if(req.session.admin) {
-    res.locals.auth = true;
-  }
-  next();
-});
 
 // put & delete middleware
 app.use(methodOverride(function(req, res){
