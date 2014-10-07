@@ -45,24 +45,21 @@ $(function() {
 
     $.post('/admin', $('.form').serialize())
       .done(function(data) {
-        console.log(data);
-        $('.ajax-success').append('Successfully Created new shift').css('padding', '20px');
-
-        setTimeout(function() {
-          $('.ajax-success').fadeOut("slow");
-        }, 3000);
-
+        if (data) {
+          $('.ajax-success').append('Successfully Created new shift').css('padding', '20px');
+          $('form.form').hide();
+          setTimeout(function() {
+            $('.ajax-success').fadeOut("slow");
+          }, 3000);
+        } else {
+          $('.ajax-fail').append('Failed to save new shift').css('padding', '20px');
+          setTimeout(function() {
+            $('.ajax-fail').fadeOut("slow");
+          }, 3000);
+        }
       })
       .fail(function(data) {
-
-        console.log('This is data ', data);
-
-        $('.ajax-fail').append('Failed to save new shift').css('padding', '20px');
-
-        setTimeout(function() {
-          $('.ajax-fail').fadeOut("slow");
-        }, 3000);
-
+        $('.ajax-fail').append('You crashed the SERVER! Contact Derek!').css('padding', '20px');
       })
       .always(function() {
         console.info('Finished with ');

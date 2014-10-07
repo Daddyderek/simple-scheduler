@@ -14,10 +14,10 @@ exports.create = function(req, res, next) {
     });
     shift.save(function(err) {
       if (err) res.json(err);
-      res.status(200).send('Successfully Saved!');
+      res.send(true);
     });
   } else {
-    res.send('Error');
+    res.send(false);
   }
 };
 
