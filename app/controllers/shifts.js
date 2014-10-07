@@ -3,7 +3,6 @@ var Employee = require('../models/employees');
 var helpers  = require('../lib/helpers');
 var moment   = require('moment');
 var _        = require('lodash');
-var d = require('eyes');
 
 exports.create = function(req, res, next) {
   var data = req.body;

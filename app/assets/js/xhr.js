@@ -59,7 +59,7 @@ $(function() {
         }
       })
       .fail(function(data) {
-        $('.ajax-fail').prepend('You crashed the SERVER! Contact Derek!').css('padding', '20px');
+        $('.ajax-fail').prepend('Ajax failure').css('padding', '20px');
       })
       .always(function() {
         console.info('Finished with ');
