@@ -3,9 +3,9 @@ section.login {
   left: 50%;
   top: 50%;
   width: 100%;
-  transform: translate(-50%, -80%);
+  transform: translate(-50%, -50%);
   @include max-breakpoint(tablet-horizontal) {
-    transform: translate(-50%, 60%);
+    transform: translate(-50%, 40%);
   }
   @include between-breakpoints(881px, 1025px) {
     transform: translate(-50%, -80%);
@@ -18,7 +18,7 @@ section.login {
     @include font-size(12px);
   }
   .icon, .input {
-    padding: 0 20px;
+    padding: 0 15px;
   }
   .icon {
     text-align: center;
@@ -58,5 +58,6 @@ section.login {
     color: #111;
     font-weight: bold;
     margin-top: 40px;
+    padding: 8px 17px;
   }
 }

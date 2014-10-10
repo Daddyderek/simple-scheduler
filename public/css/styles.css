@@ -8440,16 +8440,16 @@ section.login {
   left: 50%;
   top: 50%;
   width: 100%;
-  -webkit-transform: translate(-50%, -80%);
-      -ms-transform: translate(-50%, -80%);
-          transform: translate(-50%, -80%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 @media (max-width: 64.063em) {
   /* line 1, ../../app/assets/sass/sections/_login.scss */
   section.login {
-    -webkit-transform: translate(-50%, 60%);
-        -ms-transform: translate(-50%, 60%);
-            transform: translate(-50%, 60%);
+    -webkit-transform: translate(-50%, 40%);
+        -ms-transform: translate(-50%, 40%);
+            transform: translate(-50%, 40%);
   }
 }
 @media (min-width: 881px) and (max-width: 1025px) {
@@ -8472,7 +8472,7 @@ section.login label {
 }
 /* line 20, ../../app/assets/sass/sections/_login.scss */
 section.login .icon, section.login .input {
-  padding: 0 20px;
+  padding: 0 15px;
 }
 /* line 23, ../../app/assets/sass/sections/_login.scss */
 section.login .icon {
@@ -8519,4 +8519,5 @@ section.login button.authenticate {
   color: #111;
   font-weight: bold;
   margin-top: 40px;
+  padding: 8px 17px;
 }

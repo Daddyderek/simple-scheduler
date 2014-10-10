@@ -14,6 +14,9 @@ router.route('/')
   })
   .post(login.verify);
 
+router.route('/login')
+  .post(login.verifyAdmin);
+
 // middleware for authorization
 router.use(function(req, res, next) {
   if (req.session.user === undefined) {
