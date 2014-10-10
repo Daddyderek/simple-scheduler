@@ -4,16 +4,13 @@ var employee = require('../controllers/employees');
 var shift = require('../controllers/shifts');
 
 router.use(function(req, res, next) {
-
   console.log(req.method, req.url);
-
-  res.locals.auth = false;
-
-  if(req.session.admin) {
-    res.locals.auth = true;
+  res.locals.admin = false;
+  if (req.session.admin) {
+    res.locals.admin = true;
     next();
   } else {
-    res.redirect('/');
+    res.redirect('/login');
   }
 });
 

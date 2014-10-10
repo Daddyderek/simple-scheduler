@@ -22,17 +22,12 @@ app.set('views', path.join(__dirname, 'app/views'));
 app.set('view engine', 'jade');
 
 
-app.use(favicon(__dirname + '/public/img/favicon.ico'));
 app.use(logger('dev'));
+app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
-// session handling middleware
-app.use(session({
-  secret: 'kingtak kittie',
-  saveUninitialized: true,
-  resave: true
-}));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(favicon(__dirname + '/public/img/favicon.ico'));
 
 // put & delete middleware
 app.use(methodOverride(function(req, res){
@@ -43,8 +38,13 @@ app.use(methodOverride(function(req, res){
   }
 }));
 
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// session handling middleware
+app.use(session({
+  secret: 'kingtak kittie',
+  saveUninitialized: true,
+  resave: true,
+  cookie: { maxAge: 200000 }
+}));
 
 app.use('/', index);
 app.use('/admin', admin);
