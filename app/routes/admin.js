@@ -5,12 +5,13 @@ var shift = require('../controllers/shifts');
 
 router.use(function(req, res, next) {
   console.log(req.method, req.url);
+
   res.locals.admin = false;
-  if (req.session.admin) {
+  if (req.session.user.admin) {
     res.locals.admin = true;
     next();
   } else {
-    res.redirect('/login');
+    res.redirect('/');
   }
 });
 

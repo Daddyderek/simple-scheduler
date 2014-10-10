@@ -14,6 +14,18 @@ router.route('/')
   })
   .post(login.verify);
 
+// middleware for authorization
+router.use(function(req, res, next) {
+  if (req.session.user === undefined) {
+    res.redirect('/');
+  } else {
+    if (req.session.user.admin) {
+      res.locals.admin = true;
+    }
+    next();
+  }
+});
+
 router.route('/calendar')
   .get(index.render);
 
