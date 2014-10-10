@@ -9,13 +9,13 @@ router.use(function(req, res, next) {
 });
 
 router.route('/')
-  .get(index.render);
-
-router.route('/login')
   .get(function(req, res) {
     res.render('login');
   })
   .post(login.verify);
+
+router.route('/calendar')
+  .get(index.render);
 
 router.route('/logout')
   .get(function(req, res) {

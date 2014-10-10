@@ -13,7 +13,7 @@ module.exports.verify = function(req, res) {
     if (_.isNull(_user)) {
       res.redirect('/login');
     } else {
-      req.session.admin = _user.username;
+      req.session = _user.username;
       res.redirect('admin');
     }
   });
