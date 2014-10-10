@@ -13,4 +13,50 @@ section.login {
   .btn-container {
     text-align: center;
   }
+  label {
+    font-family: 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    @include font-size(12px);
+  }
+  .icon, .input {
+    padding: 0 20px;
+  }
+  .icon {
+    text-align: center;
+    color: $lightGrey;
+    @include font-size(12px);
+    line-height: 1.5;
+    img {
+      margin-bottom: 30px;
+    }
+    strong {
+      color: white;
+    }
+  }
+  input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 9px;
+    height: 50px;
+    border: 1px solid #ccc;
+    padding-right: 0;
+    color: #111;
+    background: #fdfdfd;
+    font-family: 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    border-radius: 3px;
+  }
+  button.authenticate {
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 0;
+    background-color: #272727;
+    color: #eee;
+    font: 400 11px / 14px 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #e5e5e5;
+    color: #111;
+    font-weight: bold;
+    margin-top: 40px;
+  }
 }
