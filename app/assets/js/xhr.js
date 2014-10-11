@@ -42,8 +42,9 @@ $(function() {
   $('.form').submit(function(e) {
 
     e.preventDefault();
+    var $route = $('.route-path').attr('data');
 
-    $.post('/admin', $('.form').serialize())
+    $.post($route, $('.form').serialize())
       .done(function(data) {
         if (data.valid) {
           $('.ajax-success').prepend(data.msg).css('padding', '20px');

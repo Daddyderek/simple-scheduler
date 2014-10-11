@@ -2,6 +2,17 @@ nav.top-bar {
   #logo {
     height: 70px;
   }
+  li.last {
+    @include max-breakpoint(tablet) {
+      text-align: center;
+    }
+  }
+  .login-input {
+    @include max-breakpoint(tablet) {
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
   .top-bar-section ul.right {
     @include min-breakpoint(screen-md) {
       margin-right: 25px;
