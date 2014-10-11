@@ -38,8 +38,6 @@ exports.create = function(req, res, next) {
     }, function(err, _shift) {
       if (err) throw err;
 
-      console.log('this is _shift ==== ', _shift);
-
       if (_.isNull(_shift)) {
         shift.save(function(err) {
           if (err) throw err;
@@ -51,7 +49,7 @@ exports.create = function(req, res, next) {
       } else {
         res.send({
           valid: false,
-          msg: 'Only one shift type per day!'
+          msg: 'You already have a '+ _shift.shift +' shift scheduled!'
         });
       }
     });
