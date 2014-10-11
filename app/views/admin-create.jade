@@ -10,17 +10,16 @@ block content
       .route-path(data="/admin/create")
       form(data-abide="ajax" class="form" role="form")
         .row
-          .medium-6.medium-centered.columns
+          .small-10.medium-6.small-centered.columns
             label
               | Employee's First Name
               input(type='text' name="firstName" placeholder='First Name')
-        .row
-          .medium-6.medium-centered.columns
+          .small-10.medium-6.small-centered.columns
             label
               | Employee's Last Name
               input(type='text' name="lastName" placeholder='Last Name')
-        .row.last-row
-          .medium-6.medium-centered.columns.center-text
+        .last-row
+          .small-10.medium-6.small-centered.columns.center-text
             button(type="submit" class="submit-btn") Submit
 append scripts
   script(src="/js/libs/datepicker.js")

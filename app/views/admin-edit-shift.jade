@@ -22,7 +22,7 @@ block content
               .row
                 .small-9.columns
                   label
-                    | #{employee} is currently working #{day} #{type}
+                    | #{employee} is working #{day} #{type}
                     select(name="employee")
                       each emp in emps
                         option(value="#{emp}" selected= emp == employee) #{emp}

@@ -1,33 +1,34 @@
 extends layout
 
 block content
-  .row
-    .medium-6.medium-centered.columns
-      h1.center-title Edit Shift
-  form(method="POST" action="/admin/edit" role="form")
+  section.admin-edit
     .row
       .medium-6.medium-centered.columns
-        label
-        | Shifts
-        select(name="id")
-          each shift in shifts
-            option(value="#{shift._id}") #{shift.date} #{shift.shift}
+        h1.center-title Edit Shift
+    form(method="POST" action="/admin/edit" role="form")
+      .row
+        .medium-6.medium-centered.columns
+          label
+          | Shifts
+          select(name="id")
+            each shift in shifts
+              option(value="#{shift._id}") #{shift.date} #{shift.shift}
+      .row
+        .medium-6.medium-centered.columns.center-title
+          button(type="submit") Submit
     .row
-      .medium-6.medium-centered.columns.center-title
-        button(type="submit") Submit
-  .row
-    .medium-6.medium-centered.columns
-      h1.center-title Delete Employee
-  .row
-    .medium-6.medium-centered.columns
-      each employee in employees
-        .employee-selection
-          .row
-            .small-9.columns
-              h1.employee #{employee.firstName.charAt(0).toUpperCase() + employee.firstName.slice(1)} #{employee.lastName.charAt(0).toUpperCase() + employee.lastName.slice(1) }
-            .small-3.columns
-              button(type="submit" href='/admin/edit/#{employee._id}' data-id="#{employee._id}" class='edit delete-btn') Delete
-          hr
+      .medium-6.medium-centered.columns
+        h1.center-title Delete Employee
+    .row
+      .medium-6.medium-centered.columns
+        each employee in employees
+          .employee-selection
+            .row
+              .small-9.columns
+                h1.employee #{employee.firstName.charAt(0).toUpperCase() + employee.firstName.slice(1)} #{employee.lastName.charAt(0).toUpperCase() + employee.lastName.slice(1) }
+              .small-3.columns
+                button(type="submit" href='/admin/edit/#{employee._id}' data-id="#{employee._id}" class='edit delete-btn') Delete
+            hr
 
 append scripts
   script(src="/js/libs/datepicker.js")

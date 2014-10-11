@@ -11,6 +11,7 @@ nav.top-bar {
     @include max-breakpoint(tablet) {
       width: 50%;
       margin: 0 auto;
+      margin-top: 10px;
     }
   }
   .top-bar-section ul.right {

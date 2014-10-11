@@ -1,4 +1,9 @@
 section.admin-dashboard {
+  @include max-breakpoint(screen-sm) {
+    margin: 0 auto;
+    margin-top: 70px;
+    width: 80%;
+  }
   margin-top: 50px;
   .delete-btn {
     @include max-breakpoint(screen-xs) {
