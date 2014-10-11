@@ -8,13 +8,22 @@ exports.get = function(req, res, nex) {
 };
 
 exports.create = function(req, res, next) {
+
+  var firstName = req.body.firstName.toLowerCase();
+  var lastName = req.body.lastName.toLowerCase();
+
   Employee.findOne({
-    firstName: req.body.firstName.toLowerCase()
-  }, function(err, user) {
+    firstName: firstName
+  }, function(err, _user) {
+
     if (err) throw err;
-    if (!_.isNull(user)) {
-      if (user.firstName === req.body.firstName.toLowerCase() && user.lastName === req.body.lastName.toLowerCase()) {
-        res.send('already created');
+
+    if (!_.isNull(_user)) {
+      if (_user.firstName ===  firstName && _user.lastName === lastName) {
+        res.send({
+          valid: false,
+          msg: 'Employee already exists!'
+        });
       }
     } else {
       var employee = new Employee({
@@ -23,7 +32,10 @@ exports.create = function(req, res, next) {
       });
       employee.save(function(err) {
         if (err) throw err;
-        res.redirect('/');
+        res.send({
+          valid: true,
+          msg: 'Successfully created employee!'
+        });
       });
     }
   });
@@ -36,6 +48,5 @@ exports.delete = function(req, res, next) {
     _id : id
   }, function(err, emp) {
     if (err) throw err;
-    res.send('success');
   });
 };
