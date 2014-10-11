@@ -5,6 +5,8 @@
   color: white;
 }
 #custom-month {
+  position: relative;
+  z-index: 9999999;
   @include font-size(35px);
   margin-right: 20px;
 }

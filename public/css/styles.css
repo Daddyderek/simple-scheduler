@@ -8305,23 +8305,25 @@ body {
 
 /* line 7, ../../app/assets/sass/sections/_calender.scss */
 #custom-month {
+  position: relative;
+  z-index: 9999999;
   font-size: 35px;
   font-size: 2.1875rem;
   margin-right: 20px;
 }
 
-/* line 11, ../../app/assets/sass/sections/_calender.scss */
+/* line 13, ../../app/assets/sass/sections/_calender.scss */
 #custom-year {
   font-size: 35px;
   font-size: 2.1875rem;
 }
 
-/* line 14, ../../app/assets/sass/sections/_calender.scss */
+/* line 16, ../../app/assets/sass/sections/_calender.scss */
 .center-title {
   text-align: center;
 }
 
-/* line 18, ../../app/assets/sass/sections/_calender.scss */
+/* line 20, ../../app/assets/sass/sections/_calender.scss */
 .fc-calendar {
   border-radius: 0;
   top: 20px;
@@ -8329,7 +8331,7 @@ body {
   left: 0;
   right: 0;
 }
-/* line 24, ../../app/assets/sass/sections/_calender.scss */
+/* line 26, ../../app/assets/sass/sections/_calender.scss */
 .fc-calendar:after {
   content: "";
   position: absolute;
@@ -8339,7 +8341,7 @@ body {
   height: 5px;
   pointer-events: none;
 }
-/* line 33, ../../app/assets/sass/sections/_calender.scss */
+/* line 35, ../../app/assets/sass/sections/_calender.scss */
 .fc-calendar .fc-head {
   box-shadow: none;
   border-radius: 0;
@@ -8347,29 +8349,29 @@ body {
   background: #111;
   border-bottom: 5px solid #9ed600;
 }
-/* line 39, ../../app/assets/sass/sections/_calender.scss */
+/* line 41, ../../app/assets/sass/sections/_calender.scss */
 .fc-calendar .fc-head > div {
   text-align: left;
   padding-left: 10px;
   font-weight: 500;
   margin-top: -5px;
 }
-/* line 46, ../../app/assets/sass/sections/_calender.scss */
+/* line 48, ../../app/assets/sass/sections/_calender.scss */
 .fc-calendar .fc-body {
   padding: 0;
   height: calc(100% - 40px);
 }
-/* line 50, ../../app/assets/sass/sections/_calender.scss */
+/* line 52, ../../app/assets/sass/sections/_calender.scss */
 .fc-calendar .fc-row {
   background: #222;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: none;
 }
-/* line 54, ../../app/assets/sass/sections/_calender.scss */
+/* line 56, ../../app/assets/sass/sections/_calender.scss */
 .fc-calendar .fc-row > div {
   overflow: hidden;
 }
-/* line 56, ../../app/assets/sass/sections/_calender.scss */
+/* line 58, ../../app/assets/sass/sections/_calender.scss */
 .fc-calendar .fc-row > div:after {
   content: "";
   position: absolute;
@@ -8380,22 +8382,22 @@ body {
   background: -webkit-linear-gradient(rgba(255, 255, 255, 0), #222222);
   background: linear-gradient(rgba(255, 255, 255, 0), #222222);
 }
-/* line 65, ../../app/assets/sass/sections/_calender.scss */
+/* line 67, ../../app/assets/sass/sections/_calender.scss */
 .fc-calendar .fc-row > div > div {
   overflow: scroll;
   height: 100%;
   padding-bottom: 35px;
   margin-top: 30px;
 }
-/* line 70, ../../app/assets/sass/sections/_calender.scss */
+/* line 72, ../../app/assets/sass/sections/_calender.scss */
 .fc-calendar .fc-row > div > div::-webkit-scrollbar {
   display: none;
 }
-/* line 78, ../../app/assets/sass/sections/_calender.scss */
+/* line 80, ../../app/assets/sass/sections/_calender.scss */
 .fc-calendar .fc-row > div.fc-today > div > div {
   color: #fff;
 }
-/* line 83, ../../app/assets/sass/sections/_calender.scss */
+/* line 85, ../../app/assets/sass/sections/_calender.scss */
 .fc-calendar .dinner:after {
   content: "D";
   width: 18px;
@@ -8409,7 +8411,7 @@ body {
   font-size: 12px;
   line-height: 1.7;
 }
-/* line 98, ../../app/assets/sass/sections/_calender.scss */
+/* line 100, ../../app/assets/sass/sections/_calender.scss */
 .fc-calendar .lunch:after {
   content: "L";
   width: 18px;
@@ -8425,7 +8427,7 @@ body {
   color: black;
 }
 
-/* line 116, ../../app/assets/sass/sections/_calender.scss */
+/* line 118, ../../app/assets/sass/sections/_calender.scss */
 .custom-header h3 {
   width: 100%;
   text-align: center;
@@ -8433,12 +8435,12 @@ body {
   color: #fff;
   font-weight: 300;
 }
-/* line 122, ../../app/assets/sass/sections/_calender.scss */
+/* line 124, ../../app/assets/sass/sections/_calender.scss */
 .custom-header h3 .custom-month {
   font-weight: 600;
   margin-right: 15px;
 }
-/* line 127, ../../app/assets/sass/sections/_calender.scss */
+/* line 129, ../../app/assets/sass/sections/_calender.scss */
 .custom-header nav {
   top: 10px;
   right: auto;
@@ -8449,36 +8451,36 @@ body {
   margin-left: -80px;
 }
 @media screen and (max-width: 880px), screen and (max-height: 450px) {
-  /* line 127, ../../app/assets/sass/sections/_calender.scss */
+  /* line 129, ../../app/assets/sass/sections/_calender.scss */
   .custom-header nav {
     margin-left: 0;
   }
 }
-/* line 136, ../../app/assets/sass/sections/_calender.scss */
+/* line 138, ../../app/assets/sass/sections/_calender.scss */
 .custom-header nav span {
   background: none;
   box-shadow: none;
 }
-/* line 139, ../../app/assets/sass/sections/_calender.scss */
+/* line 141, ../../app/assets/sass/sections/_calender.scss */
 .custom-header nav span:before {
   -webkit-transition: 0.25s color;
           transition: 0.25s color;
 }
-/* line 142, ../../app/assets/sass/sections/_calender.scss */
+/* line 144, ../../app/assets/sass/sections/_calender.scss */
 .custom-header nav span:hover {
   background: none;
   box-shadow: none;
 }
-/* line 145, ../../app/assets/sass/sections/_calender.scss */
+/* line 147, ../../app/assets/sass/sections/_calender.scss */
 .custom-header nav span:hover:before {
   color: #999;
 }
-/* line 149, ../../app/assets/sass/sections/_calender.scss */
+/* line 151, ../../app/assets/sass/sections/_calender.scss */
 .custom-header nav span:last-child {
   margin-left: 415px;
 }
 @media screen and (max-width: 880px), screen and (max-height: 450px) {
-  /* line 149, ../../app/assets/sass/sections/_calender.scss */
+  /* line 151, ../../app/assets/sass/sections/_calender.scss */
   .custom-header nav span:last-child {
     margin-left: 0;
   }
