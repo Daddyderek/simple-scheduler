@@ -34,3 +34,23 @@ label {
   margin-bottom: 20px;
   background-color: #F2DEDE;
 }
+.invalid {
+  animation: shake .5s linear;
+}
+@keyframes shake {
+  8%, 41% {
+    transform: translateX(-10px) translateZ(0);
+  }
+  25%, 58% {
+    transform: translateX(10px) translateZ(0);
+  }
+  75% {
+    transform: translateX(-5px) translateZ(0);
+  }
+  92% {
+    transform: translateX(5px) translateZ(0);
+  }
+  0%, 100% {
+    transform: translateX(0) translateZ(0);
+  }
+}

@@ -1,6 +1,7 @@
 var User = require('../models/users');
 var Password = require('../models/passwords');
 var _ = require('lodash');
+var d = require('eyes');
 
 module.exports.verify = function(req, res) {
   var password = req.body.password;
@@ -8,11 +9,12 @@ module.exports.verify = function(req, res) {
   Password.findOne({
     password: password
   }, function(err, _user) {
-    if (err) throw err;
+    d.inspect(_.isNull(_user));
     if (_.isNull(_user)) {
+      res.send({ valid : false });
     } else {
       req.session.user = _user;
-      res.redirect('/calendar');
+      res.send({ redirect : '/calendar' });
     }
   });
 };
@@ -23,19 +25,17 @@ module.exports.verifyAdmin = function(req, res) {
   var password = req.body.password;
 
   User.findOne({
-    username: username,
-    password: password
+    username: username
   }, function(err, _user) {
     if (err) throw err;
     if (_.isNull(_user)) {
-      res.send('No user found');
+      res.send({ nonexistent : true });
+    } else if(_user.password !== password) {
+      res.send({ invalidPassword : true });
     } else {
       if (_user.admin) {
         req.session.user = _user;
-        res.redirect('/admin');
-      } else {
-        req.session.user = _user;
-        res.redirect('/calendar');
+        res.send({ redirect : '/admin' });
       }
     }
   });

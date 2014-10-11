@@ -17,6 +17,34 @@ $(function() {
 
   updateCalendar($currentYear);
 
+  $('.form').submit(function(e) {
+
+    e.preventDefault();
+
+    $.post('/login', $('.form').serialize())
+      .done(function(data) {
+        if (data.nonexistent) {
+          validity('.login-input');
+        } else if (data.invalidPassword) {
+          validity('.login-pw');
+        } else {
+          window.location = data.redirect;
+        }
+      })
+      .fail(function(data) {
+        console.log(fail);
+      });
+  });
+
+  function validity(elem) {
+    var $input = $(elem);
+
+    $input.addClass('invalid');
+    setTimeout(function() {
+      $input.removeClass('invalid');
+    }, 1000);
+  }
+
   function updateCalendar(year) {
     $.getJSON('/shifts/' + year, function(json) {
       var shiftData = {};

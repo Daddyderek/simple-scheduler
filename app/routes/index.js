@@ -1,7 +1,7 @@
 var express = require('express');
-var router = express.Router();
 var index = require('../controllers/index');
 var login = require('../controllers/logins');
+var router = express.Router();
 
 router.use(function(req, res, next) {
   console.log(req.method, req.url);
@@ -14,14 +14,12 @@ router.route('/')
   })
   .post(login.verify);
 
-router.route('/login')
-  .post(login.verifyAdmin);
-
 // middleware for authorization
 router.use(function(req, res, next) {
   if (req.session.user === undefined) {
     res.redirect('/');
   } else {
+    res.locals.loggedIn = true;
     if (req.session.user.admin) {
       res.locals.admin = true;
     }
@@ -31,6 +29,9 @@ router.use(function(req, res, next) {
 
 router.route('/calendar')
   .get(index.render);
+
+router.route('/login')
+  .post(login.verifyAdmin);
 
 router.route('/logout')
   .get(function(req, res) {

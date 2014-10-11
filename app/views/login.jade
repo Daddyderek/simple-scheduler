@@ -9,13 +9,13 @@ block content
           strong This is a protected area.
           |  Please enter your password to continue.
 
-      form(method="POST" action="/" role="form")
+      form(data-abide="ajax" class="form" role="form")
         .row
           .small-8.medium-4.small-centered.columns.input
             label Password
-              input(type="password" name="password" required)
+              input(type="password" class="password-login" name="password" required)
         .row
           .small-8.medium-4.small-centered.columns.btn-container
             button(type='submit' class="authenticate") Authenticate
 append scripts
-  //- script(src="/js/login.js")
+  script(src="/js/login.js")

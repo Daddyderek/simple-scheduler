@@ -7658,6 +7658,76 @@ label {
   background-color: #F2DEDE;
 }
 
+/* line 37, ../../app/assets/sass/partials/_base.scss */
+.invalid {
+  -webkit-animation: shake .5s linear;
+          animation: shake .5s linear;
+}
+
+@-webkit-keyframes shake {
+  /* line 41, ../../app/assets/sass/partials/_base.scss */
+  8%, 41% {
+    -webkit-transform: translateX(-10px) translateZ(0);
+            transform: translateX(-10px) translateZ(0);
+  }
+
+  /* line 44, ../../app/assets/sass/partials/_base.scss */
+  25%, 58% {
+    -webkit-transform: translateX(10px) translateZ(0);
+            transform: translateX(10px) translateZ(0);
+  }
+
+  /* line 47, ../../app/assets/sass/partials/_base.scss */
+  75% {
+    -webkit-transform: translateX(-5px) translateZ(0);
+            transform: translateX(-5px) translateZ(0);
+  }
+
+  /* line 50, ../../app/assets/sass/partials/_base.scss */
+  92% {
+    -webkit-transform: translateX(5px) translateZ(0);
+            transform: translateX(5px) translateZ(0);
+  }
+
+  /* line 53, ../../app/assets/sass/partials/_base.scss */
+  0%, 100% {
+    -webkit-transform: translateX(0) translateZ(0);
+            transform: translateX(0) translateZ(0);
+  }
+}
+
+@keyframes shake {
+  /* line 41, ../../app/assets/sass/partials/_base.scss */
+  8%, 41% {
+    -webkit-transform: translateX(-10px) translateZ(0);
+            transform: translateX(-10px) translateZ(0);
+  }
+
+  /* line 44, ../../app/assets/sass/partials/_base.scss */
+  25%, 58% {
+    -webkit-transform: translateX(10px) translateZ(0);
+            transform: translateX(10px) translateZ(0);
+  }
+
+  /* line 47, ../../app/assets/sass/partials/_base.scss */
+  75% {
+    -webkit-transform: translateX(-5px) translateZ(0);
+            transform: translateX(-5px) translateZ(0);
+  }
+
+  /* line 50, ../../app/assets/sass/partials/_base.scss */
+  92% {
+    -webkit-transform: translateX(5px) translateZ(0);
+            transform: translateX(5px) translateZ(0);
+  }
+
+  /* line 53, ../../app/assets/sass/partials/_base.scss */
+  0%, 100% {
+    -webkit-transform: translateX(0) translateZ(0);
+            transform: translateX(0) translateZ(0);
+  }
+}
+
 /* line 2, ../../app/assets/sass/partials/_header.scss */
 nav.top-bar #logo {
   height: 70px;
