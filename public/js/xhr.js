@@ -1,10 +1,12 @@
 $(function() {
 
   function ajaxResponse(elem, msg) {
-    $(elem).prepend(msg).css('padding', '20px');
+    $(elem).html();
+    $(elem).prepend("<span class='flash-msg'>" +msg+"</span>").css('padding', '20px').fadeIn();
     $('.submit-btn').hide();
     setTimeout(function() {
       $(elem).fadeOut("slow");
+      $('.flash-msg').remove();
       $('.submit-btn').show();
     }, 3000);
   }
