@@ -25,17 +25,35 @@ exports.create = function(req, res, next) {
       msg: 'Did not select a shift!'
     });
   } else {
+
     var shift = new Shift({
       date: new Date(data.date),
       employees: emps,
       shift: data.shift
     });
-    shift.save(function(err) {
+
+    Shift.findOne({
+      date: data.date,
+      shift: data.shift
+    }, function(err, _shift) {
       if (err) throw err;
-      res.send({
-        valid: true,
-        msg: 'Successfully created new shift!'
-      });
+
+      console.log('this is _shift ==== ', _shift);
+
+      if (_.isNull(_shift)) {
+        shift.save(function(err) {
+          if (err) throw err;
+          res.send({
+            valid: true,
+            msg: 'Successfully created new shift!'
+          });
+        });
+      } else {
+        res.send({
+          valid: false,
+          msg: 'Only one shift type per day!'
+        });
+      }
     });
   }
 };
