@@ -52,9 +52,16 @@
   .fc-row {
     background: #222;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    @include max-breakpoint(tablet) {
+      // border-bottom: 4px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 3px solid $purple;
+    }
     box-shadow: none;
     > div {
       overflow: hidden;
+      @include max-breakpoint(tablet) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
       &:after {
         content: "";
         position: absolute;
