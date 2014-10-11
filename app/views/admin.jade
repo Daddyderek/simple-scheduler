@@ -3,19 +3,19 @@ extends layout
 block content
   section.admin-dashboard
     .row
-      .medium-6.medium-centered.columns
+      .medium-6.small-centered.columns
         h1.center-title Scheduling People
         .ajax-success
         .ajax-fail
       .ajax-form(data="/admin" hidden)
       form(data-abide="ajax" class="form" role="form")
         .row
-          .medium-6.medium-centered.columns
+          .small-11.medium-6.small-centered.columns
             label
               | Select Date
               input(type="text" name="date" class="datepicker" required)
             hr
-          .medium-6.medium-centered.columns
+          .small-11.medium-6.small-centered.columns
             .employee-container
               .selectEmployee
                 .row
@@ -28,17 +28,17 @@ block content
                   .small-3.columns.delete-btn
                     button(type='button' class='delete-worker') Delete
         .row
-          .medium-6.medium-centered.columns
+          .small-11.medium-6.small-centered.columns
             button(type='button' class="add-worker") + Worker
         .row
-          .medium-6.medium-centered.columns
+          .small-11.medium-6.small-centered.columns
             label Choose Shift
             input#lunch(type='radio', name='shift', value='lunch' required)
             label(for='lunch') Lunch
             input#dinner(type='radio', name='shift', value='dinner' required)
             label(for='dinner') Dinner
         .row
-          .medium-6.medium-centered.columns.center-text
+          .small-11.medium-6.small-centered.columns.center-text
             button(type="submit" class="submit-btn" value="submit") Submit
 append scripts
   script(src="/js/libs/datepicker.js")

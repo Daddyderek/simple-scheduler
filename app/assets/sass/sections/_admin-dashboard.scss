@@ -6,8 +6,5 @@ section.admin-dashboard {
   }
   margin-top: 50px;
   .delete-btn {
-    @include max-breakpoint(screen-xs) {
-      padding-left: 0;
-    }
   }
 }

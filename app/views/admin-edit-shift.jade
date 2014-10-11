@@ -8,7 +8,6 @@ block content
         h1.center-title #{date}
     form(role="form" id="delete-shift" method="POST" action="/shifts/"+'#{id}' enctype="application/x-www-form-urlencoded")
       input(type="hidden" name="_method" value="delete")
-
       .row
         .medium-6.medium-centered.columns.center-title
           button(id="delete-shift-btn") DELETE SHIFT
@@ -16,6 +15,7 @@ block content
     form(role="form" method="POST" action="/shifts/"+'#{id}' enctype="application/x-www-form-urlencoded")
       input(type="hidden" name="_method" value="put")
       .medium-6.medium-centered.columns
+        hr
         .employee-container
           each employee in shift.employees
             .selectEmployee
@@ -30,7 +30,9 @@ block content
                   button(type='button' class='delete-worker') Delete
         .medium-12.medium-centered.columns
           button(type='button' class="add-worker") + Worker
-          button(type="submit" class="inline-btn") Submit
+      .medium-6.medium-centered.columns.center-title
+        hr
+        button(type="submit" class="submit-btn") Submit
 append scripts
   script(src="/js/libs/datepicker.js")
   script(src="/js/xhr.js")

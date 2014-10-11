@@ -3,24 +3,24 @@ extends layout
 block content
   section.admin-edit
     .row
-      .medium-6.medium-centered.columns
+      .small-10.medium-6.small-centered.columns
         h1.center-title Edit Shift
     form(method="POST" action="/admin/edit" role="form")
       .row
-        .medium-6.medium-centered.columns
+        .small-10.medium-6.small-centered.columns
           label
           | Shifts
           select(name="id")
             each shift in shifts
               option(value="#{shift._id}") #{shift.date} #{shift.shift}
       .row
-        .medium-6.medium-centered.columns.center-title
+        .small-10.medium-6.small-centered.columns.center-title
           button(type="submit") Submit
     .row
-      .medium-6.medium-centered.columns
+      .small-10.medium-6.small-centered.columns
         h1.center-title Delete Employee
     .row
-      .medium-6.medium-centered.columns
+      .small-10.medium-6.small-centered.columns
         each employee in employees
           .employee-selection
             .row

@@ -1,0 +1,17 @@
+section.admin-edit-shift {
+  h1 {
+    @include max-breakpoint(screen-sm) {
+      line-height: 1;
+    }
+  }
+  hr {
+    margin-bottom: 30px;
+    &:last-child {
+      margin-top: 30px;
+    }
+  }
+  margin-top: 20px;
+  .submit-btn {
+    margin-top: 10px;
+  }
+}
