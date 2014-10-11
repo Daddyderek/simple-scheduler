@@ -48,5 +48,6 @@ exports.delete = function(req, res, next) {
     _id : id
   }, function(err, emp) {
     if (err) throw err;
+    res.send({ valid : true, msg : 'deleted employee' });
   });
 };

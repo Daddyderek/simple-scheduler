@@ -64,8 +64,8 @@ $(function() {
       .fail(function(data) {
         $('.ajax-fail').prepend('Ajax failure').css('padding', '20px');
       })
-      .always(function() {
-        console.info('Finished with ');
+      .always(function(response) {
+        console.info('Finished with ', response);
       });
   });
 

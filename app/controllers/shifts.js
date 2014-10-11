@@ -31,7 +31,7 @@ exports.create = function(req, res, next) {
       shift: data.shift
     });
     shift.save(function(err) {
-      if (err) res.json(err);
+      if (err) throw err;
       res.send({
         valid: true,
         msg: 'Successfully created new shift!'
