@@ -31,13 +31,11 @@ exports.create = function(req, res, next) {
 
 exports.delete = function(req, res, next) {
   var id = req.param('id');
-  console.log('inside here === ', id);
 
   Employee.findOneAndRemove({
     _id : id
   }, function(err, emp) {
     if (err) throw err;
     res.send('success');
-    // res.redirect('/admin');
   });
 };
