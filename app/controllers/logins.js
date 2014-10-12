@@ -1,7 +1,6 @@
 var User = require('../models/users');
 var Password = require('../models/passwords');
 var _ = require('lodash');
-var d = require('eyes');
 
 module.exports.verify = function(req, res) {
   var password = req.body.password;
@@ -9,7 +8,6 @@ module.exports.verify = function(req, res) {
   Password.findOne({
     password: password
   }, function(err, _user) {
-    d.inspect(_.isNull(_user));
     if (_.isNull(_user)) {
       res.send({ valid : false });
     } else {

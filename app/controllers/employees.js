@@ -1,7 +1,6 @@
 var Employee = require('../models/employees');
 var helpers = require('../lib/helpers.js');
 var _ = require('lodash');
-var moment = require('moment');
 
 exports.get = function(req, res, nex) {
   helpers.getAllEmployees(req, res, 'admin');
@@ -27,8 +26,8 @@ exports.create = function(req, res, next) {
       }
     } else {
       var employee = new Employee({
-        firstName: req.body.firstName.toLowerCase(),
-        lastName: req.body.lastName.toLowerCase()
+        firstName: firstName,
+        lastName: lastName
       });
       employee.save(function(err) {
         if (err) throw err;
