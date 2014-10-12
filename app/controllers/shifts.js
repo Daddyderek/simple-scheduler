@@ -6,13 +6,6 @@ var _        = require('lodash');
 
 exports.create = function(req, res, next) {
   var data = req.body;
-  var emps;
-
-  if (_.isArray(data.employee)) {
-    emps = _.uniq(data.employee);
-  } else {
-    emps = data.employee;
-  }
 
   if (data.date === '') {
     res.send({
@@ -28,7 +21,7 @@ exports.create = function(req, res, next) {
 
     var shift = new Shift({
       date: new Date(data.date),
-      employees: emps,
+      employees: duplicateEmps(data.employee),
       shift: data.shift
     });
 
@@ -133,7 +126,7 @@ module.exports.editShift = function(req, res) {
   Shift.findOneAndUpdate({
     _id: id
   }, {
-    employees: employees
+    employees: duplicateEmps(employees)
   }, function(err, shift) {
     if (err) throw err;
     res.redirect('/calendar');
@@ -150,4 +143,13 @@ module.exports.deleteShift = function(req, res) {
     console.log('Deleted shift', shift);
     res.redirect('/calendar');
   });
+
 };
+
+function duplicateEmps(array) {
+  if (_.isArray(array)) {
+    return _.uniq(array);
+  } else {
+    return array;
+  }
+}
