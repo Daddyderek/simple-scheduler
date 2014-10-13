@@ -5,7 +5,7 @@ section.login {
   width: 100%;
   transform: translate(-50%, -50%);
   @include max-breakpoint(tablet-horizontal) {
-    transform: translate(-50%, 50%);
+    transform: translate(-50%, 20%);
   }
   @include between-breakpoints(881px, 1025px) {
     transform: translate(-50%, -60%);
@@ -54,10 +54,11 @@ section.login {
     background-color: #272727;
     color: #eee;
     font: 400 11px / 14px 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    @include font-size(14px);
     background-color: #e5e5e5;
     color: #111;
     font-weight: bold;
     margin-top: 40px;
-    padding: 8px 17px;
+    padding: 12px 17px;
   }
 }
