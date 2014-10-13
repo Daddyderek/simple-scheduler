@@ -1,5 +1,7 @@
 section.login {
-  margin-top: 15%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
   .btn-container {
     text-align: center;
   }
