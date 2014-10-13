@@ -1,15 +1,5 @@
 section.login {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 100%;
-  transform: translate(-50%, -50%);
-  @include max-breakpoint(tablet-horizontal) {
-    transform: translate(-50%, 20%);
-  }
-  @include between-breakpoints(881px, 1025px) {
-    transform: translate(-50%, -60%);
-  }
+  margin-top: 15%;
   .btn-container {
     text-align: center;
   }
