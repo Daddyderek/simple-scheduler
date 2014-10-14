@@ -9,7 +9,7 @@ block content
       .row
         .small-10.medium-6.small-centered.columns
           label
-          | Shifts
+            | Shifts
           select(name="id")
             each shift in shifts
               option(value="#{shift._id}") #{shift.date} #{shift.shift}
