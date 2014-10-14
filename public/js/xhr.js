@@ -24,7 +24,7 @@ $(function() {
       if (rowAmt > 0) {
         $(this).closest('.row').remove();
       } else {
-        alert('Must have at least one worker');
+        ajaxResponse('.ajax-fail', 'Must have at least one worker');
       }
     } else {
       $(this).closest('.row').remove();
