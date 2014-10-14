@@ -1,6 +1,6 @@
-var Employee = require('../models/employees');
-var moment = require('moment');
-var _ = require('lodash');
+var Employee  = require('../models/employees');
+var moment    = require('moment');
+var _         = require('lodash');
 
 
 module.exports.formatName = function formatName(collection) {

@@ -1,6 +1,6 @@
 var express = require('express');
-var router = express.Router();
-var Shifts = require('../controllers/shifts');
+var Shifts  = require('../controllers/shifts');
+var router  = express.Router();
 
 router.use(function(req, res, next) {
   console.log(req.method, req.url);

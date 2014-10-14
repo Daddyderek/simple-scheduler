@@ -1,6 +1,6 @@
-var User = require('../models/users');
+var User     = require('../models/users');
 var Password = require('../models/passwords');
-var _ = require('lodash');
+var _        = require('lodash');
 
 module.exports.verify = function(req, res) {
   var password = req.body.password;

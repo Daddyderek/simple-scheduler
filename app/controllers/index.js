@@ -1,6 +1,6 @@
-var Shift = require('../models/shifts');
-var moment = require('moment');
-var _ = require('lodash');
+var Shift   = require('../models/shifts');
+var moment  = require('moment');
+var _       = require('lodash');
 
 exports.render = function(req, res, next) {
   Shift.find({})

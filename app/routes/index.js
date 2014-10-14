@@ -1,7 +1,7 @@
 var express = require('express');
-var index = require('../controllers/index');
-var login = require('../controllers/logins');
-var router = express.Router();
+var index   = require('../controllers/index');
+var login   = require('../controllers/logins');
+var router  = express.Router();
 
 router.use(function(req, res, next) {
   console.log(req.method, req.url);

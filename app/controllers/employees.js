@@ -1,6 +1,6 @@
-var Employee = require('../models/employees');
-var helpers = require('../lib/helpers.js');
-var _ = require('lodash');
+var Employee  = require('../models/employees');
+var helpers   = require('../lib/helpers.js');
+var _         = require('lodash');
 
 exports.get = function(req, res, nex) {
   helpers.getAllEmployees(req, res, 'admin');
