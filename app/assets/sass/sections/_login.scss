@@ -2,6 +2,10 @@ section.login {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  @include max-breakpoint(tablet) {
+    margin-top: 300px;
+    margin-bottom: -200px;
+  }
   .btn-container {
     text-align: center;
   }

@@ -16,6 +16,12 @@
 .center-title {
   text-align: center;
 }
+#custom-next, #custom-prev {
+  @include font-size(40px);
+}
+h3.custom-month-year {
+  padding-right: 0;
+}
 
 .fc-calendar {
   border-radius: 0;

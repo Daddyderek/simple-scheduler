@@ -57,7 +57,7 @@ module.exports.getAll = function(req, res, next) {
     .lean()
     .exec(function(err, employees) {
       if (err) throw err;
-      Shift.find({})
+      Shift.find({ date : { $gte : new Date() } })
         .sort({ date: 1})
         .lean()
         .exec(function(err, shift) {
