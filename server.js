@@ -16,7 +16,7 @@ var shift = require('./app/routes/shifts');
 var app = express();
 
 // mongoose.connect('mongodb://localhost/scheduler');
-mongoose.connect('mongodb://natsunoya:m1s@chan14@ds035260.mongolab.com:35260/natsunoya');
+mongoose.connect('mongodb://misa:m15ach4n@ds035260.mongolab.com:35260/natsunoya');
 
 
 // view engine setup
